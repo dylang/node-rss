@@ -13,73 +13,62 @@
     $ npm install nodeunit
     $ nodeunit test
 
-## API
-    var RSS = require('rss');
-
-    var feed = RSS(feed_options, [array of items])
-
 ## Usage
 
-    var XML = require('xml');
+    var RSS = require('rss');
 
-    var example1 = [ { url: 'http://www.google.com/search?aq=f&sourceid=chrome&ie=UTF-8&q=opower' } ];
-    console.log(XML(example1));
-    //<url>http://www.google.com/search?aq=f&amp;sourceid=chrome&amp;ie=UTF-8&amp;q=opower</url>
+    // new feed
+    var feed = new RSS(feed_options);
 
-    var example2 = [ { url: { _attr: { hostname: 'www.google.com', path: '/search?aq=f&sourceid=chrome&ie=UTF-8&q=opower' }  } } ];
-    console.log(XML(example2));
-    //<url hostname="www.google.com" path="/search?aq=f&amp;sourceid=chrome&amp;ie=UTF-8&amp;q=opower"/>
+    // add your items/entries/articles.
+    feed.item(item_options)
+       .item(item_options);
 
-    var example3 = [ { toys: [ { toy: 'Transformers' } , { toy: 'GI Joe' }, { toy: 'He-man' } ] } ];
-    console.log(XML(example3));
-    //<toys><toy>Transformers</toy><toy>GI Joe</toy><toy>He-man</toy></toys>
-    console.log(XML(example3, true));
-    /*
-    <toys>
-        <toy>Transformers</toy>
-        <toy>GI Joe</toy>
-        <toy>He-man</toy>
-    </toys>
-    */
-
-    var example4 = [ { toys: [ { _attr: { decade: '80s', locale: 'US'} }, { toy: 'Transformers' } , { toy: 'GI Joe' }, { toy: 'He-man' } ] } ];
-    console.log(XML(example4, true));
-    /*
-    <toys decade="80s" locale="US">
-        <toy>Transformers</toy>
-        <toy>GI Joe</toy>
-        <toy>He-man</toy>
-    </toys>
-    */
-
-    var example5 = [ { toys: [ { _attr: { decade: '80s', locale: 'US'} }, { toy: 'Transformers' } , { toy: [ { _attr: { knowing: 'half the battle' } }, 'GI Joe'] }, { toy: [ { name: 'He-man' }, { description: { _cdata: '<strong>Master of the Universe!</strong>'} } ] } ] } ];
-    console.log(XML(example5, true));
-    /*
-    <toys><toy>Transformers</toy><toy>GI Joe</toy><toy>He-man</toy></toys>
-    <toys>
-        <toy>Transformers</toy>
-        <toy>GI Joe</toy>
-        <toy>He-man</toy>
-    </toys>
-    <toys decade="80s" locale="US">
-        <toy>Transformers</toy>
-        <toy>GI Joe</toy>
-        <toy>He-man</toy>
-    </toys>
-    <toys decade="80s" locale="US">
-        <toy>Transformers</toy>
-        <toy knowing="half the battle">
-            GI Joe
-        </toy>
-        <toy>
-            <name>He-man</name>
-            <description><![CDATA[<strong>Master of the Universe!</strong>]]></description>
-        </toy>
-    </toys>
-    */
+    // cache the result
+    var xml = feed.xml();
 
 
+### feed_options
 
+        var RSS = require('rss');
+
+        // new feed
+        var rss = new RSS({
+            title: 'title',
+            description: 'description',
+            feed_url: 'http://example.com/rss.xml',
+            site_url: 'http://example.com',
+            image_url: 'http://example.com/icon.png',
+            author: 'Dylan Greene'
+        });
+
+
+### item_options
+
+    rss.item({
+        title:  'item title',
+        description: 'use this for the content. It can include html.',
+        url: 'http://example.com/article4?this&that', // link to the item
+        guid: '1123', // optional - defaults to url
+        author: 'Guest Author', // optional - defaults to feed author property
+        date: 'May 27, 2012' // any format that js Date can parse.
+    });
+
+
+### Methods
+
+ * _item(item_options)_ - add an rss item, article, entry etc.
+ * _xml([indent])_ - return the xml.  If you pass in true it will use four spaces for indenting. If you prefer
+ tabs use \t instead of true.
+
+## Notes
+ * You do not need to escape anything. This module will escape characters when necessary.
+
+## Upcoming features
+
+ * Atom support
+ * Feed validation
+ * More customization
 
 # Contributing
 
