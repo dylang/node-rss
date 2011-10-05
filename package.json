@@ -1,11 +1,12 @@
 {
     "name": "rss",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "RSS feed generator. A really simple API to add RSS feeds to any project.",
     "homepage": "http://github.com/dylang/node-rss",
     "author": "Dylan Greene <dylang@gmail.com>",
     "contributors": [
-        "Dylan Greene <dylang@gmail.com>"
+        "Dylan Greene <dylang@gmail.com>",
+        "Xavier Damman <xdamman@gmail.com>"
     ],
     "repository":
     {
