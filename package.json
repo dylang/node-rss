@@ -1,12 +1,13 @@
 {
     "name": "rss",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "RSS feed generator. A really simple API to add RSS feeds to any project.",
     "homepage": "http://github.com/dylang/node-rss",
     "author": "Dylan Greene <dylang@gmail.com>",
     "contributors": [
         "Dylan Greene <dylang@gmail.com>",
-        "Xavier Damman <xdamman@gmail.com>"
+        "Xavier Damman <xdamman@gmail.com>",
+        "Michael R. Lange"
     ],
     "repository":
     {
@@ -20,10 +21,9 @@
     },
     "dependencies":
     {
-        "xml": ">= 0.0.4",
-        "logging": ">= 2.0.0"
+        "xml": ">= 0.0.4"
     },
-    "main": "index.js",
+    "main": "lib/rss.js",
     "engines": { "node": ">=0.4.0" },
     "licenses" :
     [

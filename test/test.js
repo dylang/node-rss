@@ -2,7 +2,7 @@
     use nodeunit to run tests.
 */
 
-var RSS = require('../index');
+var RSS = require('../lib/rss');
 
 
 module.exports = {
