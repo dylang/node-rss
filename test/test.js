@@ -143,13 +143,62 @@ module.exports = {
                     date: 'May 27, 2012 04:00:00 GMT',
                     'myClass:otherField': '32c5a1a483903316fc44900b760b8e6d'
                 });
-
-        var expectedResult = '<?xml version="1.0" encoding="UTF-8"?>\n<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[title]]></title><description><![CDATA[description]]></description><link>http://example.com</link><generator>NodeJS RSS Module</generator><lastBuildDate>Fri, 31 Aug 2012 23:15:07 GMT</lastBuildDate><atom:link href="http://example.com/rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[item 1]]></title><description><![CDATA[description 1]]></description><link>http://example.com/article1</link><guid isPermaLink="true">http://example.com/article1</guid><dc:creator><![CDATA[Dylan Greene]]></dc:creator><pubDate>Thu, 24 May 2012 04:00:00 GMT</pubDate><myClass:otherField>f06057b8b5877e75e7333074cc057e4d</myClass:otherField></item><item><title><![CDATA[item 2]]></title><description><![CDATA[description 2]]></description><link>http://example.com/article2</link><guid isPermaLink="true">http://example.com/article2</guid><dc:creator><![CDATA[Dylan Greene]]></dc:creator><pubDate>Fri, 25 May 2012 04:00:00 GMT</pubDate><myClass:otherField>1debddd1aa917bf540f15444d24503e2</myClass:otherField></item><item><title><![CDATA[item 3]]></title><description><![CDATA[description 3]]></description><link>http://example.com/article3</link><guid isPermaLink="false">item3</guid><dc:creator><![CDATA[Dylan Greene]]></dc:creator><pubDate>Sat, 26 May 2012 04:00:00 GMT</pubDate><myClass:otherField>098f9662e9054a74b8b4090415363b7e</myClass:otherField></item><item><title><![CDATA[item 4 & html test with <strong>]]></title><description><![CDATA[description 4 uses some <strong>html</strong>]]></description><link>http://example.com/article4?this&amp;that</link><guid isPermaLink="true">http://example.com/article4?this&amp;that</guid><dc:creator><![CDATA[Guest Author]]></dc:creator><pubDate>Sun, 27 May 2012 04:00:00 GMT</pubDate><myClass:otherField>32c5a1a483903316fc44900b760b8e6d</myClass:otherField></item></channel></rss>' == '<?xml version="1.0" encoding="UTF-8"?>\n<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[title]]></title><description><![CDATA[description]]></description><link>http://example.com</link><generator>NodeJS RSS Module</generator><lastBuildDate>Fri, 31 Aug 2012 22:54:43 GMT</lastBuildDate><atom:link href="http://example.com/rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[item 1]]></title><description><![CDATA[description 1]]></description><link>http://example.com/article1</link><guid isPermaLink="true">http://example.com/article1</guid><dc:creator><![CDATA[Dylan Greene]]></dc:creator><pubDate>Thu, 24 May 2012 04:00:00 GMT</pubDate><myClass:otherField>f06057b8b5877e75e7333074cc057e4d</myClass:otherField></item><item><title><![CDATA[item 2]]></title><description><![CDATA[description 2]]></description><link>http://example.com/article2</link><guid isPermaLink="true">http://example.com/article2</guid><dc:creator><![CDATA[Dylan Greene]]></dc:creator><pubDate>Fri, 25 May 2012 04:00:00 GMT</pubDate><myClass:otherField>1debddd1aa917bf540f15444d24503e2</myClass:otherField></item><item><title><![CDATA[item 3]]></title><description><![CDATA[description 3]]></description><link>http://example.com/article3</link><guid isPermaLink="false">item3</guid><dc:creator><![CDATA[Dylan Greene]]></dc:creator><pubDate>Sat, 26 May 2012 04:00:00 GMT</pubDate><myClass:otherField>098f9662e9054a74b8b4090415363b7e</myClass:otherField></item><item><title><![CDATA[item 4 & html test with <strong>]]></title><description><![CDATA[description 4 uses some <strong>html</strong>]]></description><link>http://example.com/article4?this&amp;that</link><guid isPermaLink="true">http://example.com/article4?this&amp;that</guid><dc:creator><![CDATA[Guest Author]]></dc:creator><pubDate>Sun, 27 May 2012 04:00:00 GMT</pubDate><myClass:otherField>32c5a1a483903316fc44900b760b8e6d</myClass:otherField></item></channel></rss>';
         var result = feed.xml();
+        var expectedResult = '<?xml version="1.0" encoding="UTF-8"?>\n<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[title]]></title><description><![CDATA[description]]></description><link>http://example.com</link><generator>NodeJS RSS Module</generator><lastBuildDate>' + new Date().toUTCString() +'</lastBuildDate><atom:link href="http://example.com/rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[item 1]]></title><description><![CDATA[description 1]]></description><link>http://example.com/article1</link><guid isPermaLink="true">http://example.com/article1</guid><dc:creator><![CDATA[Dylan Greene]]></dc:creator><pubDate>Thu, 24 May 2012 04:00:00 GMT</pubDate><myClass:otherField>f06057b8b5877e75e7333074cc057e4d</myClass:otherField></item><item><title><![CDATA[item 2]]></title><description><![CDATA[description 2]]></description><link>http://example.com/article2</link><guid isPermaLink="true">http://example.com/article2</guid><dc:creator><![CDATA[Dylan Greene]]></dc:creator><pubDate>Fri, 25 May 2012 04:00:00 GMT</pubDate><myClass:otherField>1debddd1aa917bf540f15444d24503e2</myClass:otherField></item><item><title><![CDATA[item 3]]></title><description><![CDATA[description 3]]></description><link>http://example.com/article3</link><guid isPermaLink="false">item3</guid><dc:creator><![CDATA[Dylan Greene]]></dc:creator><pubDate>Sat, 26 May 2012 04:00:00 GMT</pubDate><myClass:otherField>098f9662e9054a74b8b4090415363b7e</myClass:otherField></item><item><title><![CDATA[item 4 & html test with <strong>]]></title><description><![CDATA[description 4 uses some <strong>html</strong>]]></description><link>http://example.com/article4?this&amp;that</link><guid isPermaLink="true">http://example.com/article4?this&amp;that</guid><dc:creator><![CDATA[Guest Author]]></dc:creator><pubDate>Sun, 27 May 2012 04:00:00 GMT</pubDate><myClass:otherField>32c5a1a483903316fc44900b760b8e6d</myClass:otherField></item></channel></rss>';
 
         test.equal(result.length, expectedResult.length);
-        //test.equal(result, expectedResult);
+        test.equal(result, expectedResult);
         test.done();
-    }
+    },
+
+    'easy test without image_url with extra fields on items and an extra XML RSS Header': function(test) {
+        var feed = new RSS({
+                    title: 'title',
+                    description: 'description',
+                    feed_url: 'http://example.com/rss.xml',
+                    site_url: 'http://example.com',
+                    author: 'Dylan Greene'
+                });
+
+        feed.xmlAddAttr('xmlns:myClass', 'http://www.example.com/myClass')
+
+        feed.item({
+                    title:  'item 1',
+                    description: 'description 1',
+                    url: 'http://example.com/article1',
+                    date: 'May 24, 2012 04:00:00 GMT',
+                    'myClass:otherField': 'f06057b8b5877e75e7333074cc057e4d'
+                })
+            .item({
+                    title:  'item 2',
+                    description: 'description 2',
+                    url: 'http://example.com/article2',
+                    date: 'May 25, 2012 04:00:00 GMT',
+                    'myClass:otherField': '1debddd1aa917bf540f15444d24503e2'
+                })
+            .item({
+                    title:  'item 3',
+                    description: 'description 3',
+                    url: 'http://example.com/article3',
+                    guid: 'item3',
+                    date: 'May 26, 2012 04:00:00 GMT',
+                    'myClass:otherField': '098f9662e9054a74b8b4090415363b7e'
+                })
+            .item({
+                    title:  'item 4 & html test with <strong>',
+                    description: 'description 4 uses some <strong>html</strong>',
+                    url: 'http://example.com/article4?this&that',
+                    author: 'Guest Author',
+                    date: 'May 27, 2012 04:00:00 GMT',
+                    'myClass:otherField': '32c5a1a483903316fc44900b760b8e6d'
+                });
+        var result = feed.xml();
+        var expectedResult = '<?xml version="1.0" encoding="UTF-8"?>\n<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:myClass="http://www.example.com/myClass" version="2.0"><channel><title><![CDATA[title]]></title><description><![CDATA[description]]></description><link>http://example.com</link><generator>NodeJS RSS Module</generator><lastBuildDate>' + new Date().toUTCString() +'</lastBuildDate><atom:link href="http://example.com/rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[item 1]]></title><description><![CDATA[description 1]]></description><link>http://example.com/article1</link><guid isPermaLink="true">http://example.com/article1</guid><dc:creator><![CDATA[Dylan Greene]]></dc:creator><pubDate>Thu, 24 May 2012 04:00:00 GMT</pubDate><myClass:otherField>f06057b8b5877e75e7333074cc057e4d</myClass:otherField></item><item><title><![CDATA[item 2]]></title><description><![CDATA[description 2]]></description><link>http://example.com/article2</link><guid isPermaLink="true">http://example.com/article2</guid><dc:creator><![CDATA[Dylan Greene]]></dc:creator><pubDate>Fri, 25 May 2012 04:00:00 GMT</pubDate><myClass:otherField>1debddd1aa917bf540f15444d24503e2</myClass:otherField></item><item><title><![CDATA[item 3]]></title><description><![CDATA[description 3]]></description><link>http://example.com/article3</link><guid isPermaLink="false">item3</guid><dc:creator><![CDATA[Dylan Greene]]></dc:creator><pubDate>Sat, 26 May 2012 04:00:00 GMT</pubDate><myClass:otherField>098f9662e9054a74b8b4090415363b7e</myClass:otherField></item><item><title><![CDATA[item 4 & html test with <strong>]]></title><description><![CDATA[description 4 uses some <strong>html</strong>]]></description><link>http://example.com/article4?this&amp;that</link><guid isPermaLink="true">http://example.com/article4?this&amp;that</guid><dc:creator><![CDATA[Guest Author]]></dc:creator><pubDate>Sun, 27 May 2012 04:00:00 GMT</pubDate><myClass:otherField>32c5a1a483903316fc44900b760b8e6d</myClass:otherField></item></channel></rss>';
+
+        test.equal(result.length, expectedResult.length);
+        test.equal(result, expectedResult);
+        test.done();
+    },
+
 };
 
