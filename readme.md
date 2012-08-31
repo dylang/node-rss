@@ -52,7 +52,7 @@
 ### Item Options
 
 In RSS an item can be used for a blog entry, project update, log entry, etc.  Your rss feed
-an have any number of items. Ten to tenty is usually good.
+an have any number of items. Ten to twenty is usually good.
 
  * _title_ <string> Title of this particular item.
  * _description_ <string> Content for the item.  Can contain html but link and image urls must include the server name.
@@ -68,11 +68,14 @@ an have any number of items. Ten to tenty is usually good.
  readers use this to determin the sort order. Some readers will also use it to determin
  if the content should be presented as unread.
 
+Besides this fields, you can add more. These will be included on each item after the fields above.
+
 ### Methods
 
  * _item(item_options)_ - add an rss item, article, entry etc.
  * _xml([indent])_ - return the xml.  If you pass in true it will use four spaces for indenting. If you prefer
  tabs use \t instead of true.
+ + _xmlAddAttr(attrKey,_attrValue)_ Add an XML RSS Header value.
 
 ## Notes
  * You do not need to escape anything. This module will escape characters when necessary.
