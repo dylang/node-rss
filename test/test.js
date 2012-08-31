@@ -160,7 +160,7 @@ module.exports = {
                     author: 'Dylan Greene'
                 });
 
-        feed.xmlAddAttr('xmlns:myClass', 'http://www.example.com/myClass')
+        feed.xmlAddAttr('xmlns:myClass', 'http://www.example.com/myClass');
 
         feed.item({
                     title:  'item 1',
