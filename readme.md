@@ -1,4 +1,4 @@
-NOTE: This repo has been cloned for my PodProxy project so I can add support for enclosures
+NOTE: This repository has been cloned for my PodProxy project so I can add support for enclosures
 
 # RSS for Node
 
