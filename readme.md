@@ -1,3 +1,5 @@
+NOTE: This repo has been cloned for my PodProxy project so I can add support for enclosures
+
 # RSS for Node
 
   Fast and simple Javascript-based RSS generator/builder for Node projects.
