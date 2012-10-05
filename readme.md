@@ -34,7 +34,10 @@
         url: 'http://example.com/article4?this&that', // link to the item
         guid: '1123', // optional - defaults to url
         author: 'Guest Author', // optional - defaults to feed author property
-        date: 'May 27, 2012' // any format that js Date can parse.
+        date: 'May 27, 2012', // any format that js Date can parse.
+        enclosureUrl: 'http://example.com/some/enclosure',  // use these 3 to embed a file
+        enclosureLength: '234933',
+        enclosureType: 'audio/mpeg'
     });
 
     // cache the xml
@@ -67,6 +70,9 @@ an have any number of items. Ten to tenty is usually good.
  * _date_ <Date object or date string> The date and time of when the intem was created.  Feed
  readers use this to determin the sort order. Some readers will also use it to determin
  if the content should be presented as unread.
+ * _enclosureUrl_ <string> URL if you wish to embed a file
+ * _enclosureLength_: <string> Byte length, if enclosureUrl is defined
+ * _enclosureType_: <string> Mime type, if enclosureUrl is defined
 
 ### Methods
 
