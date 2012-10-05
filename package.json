@@ -7,12 +7,13 @@
     "contributors": [
         "Dylan Greene <dylang@gmail.com>",
         "Xavier Damman <xdamman@gmail.com>",
-        "Michael R. Lange"
+        "Michael R. Lange",
+        "thread <thethread@gmail.com>"
     ],
     "repository":
     {
         "type": "git",
-        "url": "http://github.com/dylang/node-rss"
+        "url": "http://github.com/djthread/node-rss"
     },
     "bugs":
     {
