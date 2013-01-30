@@ -35,6 +35,7 @@
         guid: '1123', // optional - defaults to url
         author: 'Guest Author', // optional - defaults to feed author property
         date: 'May 27, 2012' // any format that js Date can parse.
+        enclosure : {url:'...', file:'path-to-file'} // optional
     });
 
     // cache the xml

@@ -102,6 +102,51 @@ module.exports = {
         test.equal(result.length, expectedResult.length);
         test.equal(result, expectedResult);
         test.done();
+    },
+
+    'test with enclosure' : function(test) {
+        var feed = new RSS({
+            title: 'title',
+            description: 'description',
+            feed_url: 'http://example.com/rss.xml',
+            site_url: 'http://example.com',
+            author: 'Dylan Greene'
+        });
+
+        feed.item({
+            title:  'item 1',
+            description: 'description 1',
+            url: 'http://example.com/article1',
+            date: 'May 24, 2012 04:00:00 GMT',
+            enclosure : 'incorrect value'
+        });
+
+        feed.item({
+            title:  'item 2',
+            description: 'description 2',
+            url: 'http://example.com/article1',
+            date: 'May 24, 2012 04:00:00 GMT',
+            enclosure : {url: '/media/some-file.flv'}
+        });
+
+        feed.item({
+            title:  'item 3',
+            description: 'description 3',
+            url: 'http://example.com/article1',
+            date: 'May 24, 2012 04:00:00 GMT',
+            enclosure : {url: '/media/image.png', file : __dirname+'/image.png'}
+        });
+
+        var expectedResult = '<?xml version="1.0" encoding="UTF-8"?>\n<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[title]]></title><description><![CDATA[description]]></description><link>http://example.com</link><generator>NodeJS RSS Module</generator><lastBuildDate>' + new Date().toUTCString() +'</lastBuildDate><atom:link href="http://example.com/rss.xml" rel="self" type="application/rss+xml"/>'+
+                                    '<item><title><![CDATA[item 1]]></title><description><![CDATA[description 1]]></description><link>http://example.com/article1</link><guid isPermaLink="true">http://example.com/article1</guid><dc:creator><![CDATA[Dylan Greene]]></dc:creator><pubDate>Thu, 24 May 2012 04:00:00 GMT</pubDate></item>'+
+                                    '<item><title><![CDATA[item 2]]></title><description><![CDATA[description 2]]></description><link>http://example.com/article1</link><guid isPermaLink="true">http://example.com/article1</guid><dc:creator><![CDATA[Dylan Greene]]></dc:creator><pubDate>Thu, 24 May 2012 04:00:00 GMT</pubDate><enclosure url="/media/some-file.flv" length="0" type="video/x-flv"/></item>'+
+                                    '<item><title><![CDATA[item 3]]></title><description><![CDATA[description 3]]></description><link>http://example.com/article1</link><guid isPermaLink="true">http://example.com/article1</guid><dc:creator><![CDATA[Dylan Greene]]></dc:creator><pubDate>Thu, 24 May 2012 04:00:00 GMT</pubDate><enclosure url="/media/image.png" length="16650" type="image/png"/></item>'+
+                                '</channel></rss>';
+        var result = feed.xml();
+
+        test.equal(result.length, expectedResult.length);
+        test.equal(result, expectedResult);
+        test.done();
     }
 };
 
