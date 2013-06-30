@@ -80,19 +80,13 @@ an have any number of items. Ten to tenty is usually good.
  * This module is very fast but you might as well cache the output of xml() and serve
  it until something changes.
 
-## Upcoming features
-
- * Atom support
- * Feed validation
- * Feedburner integration
- * More customization
- * Express middleware for serving feeds
- * What else?
-
 # Contributing
 
-Contributions to the project are welcome. Feel free to fork and improve. I accept pull requests and issues,
-especially when tests are included.
+Contributions to the project are welcome. Feel free to fork and improve.
+I accept pull requests when tests and updated docs are included.
+
+I'm not actively adding features to this module. If you would like to take over maintaining it
+just let me know.
 
 # License
 
