@@ -21,7 +21,8 @@
     },
     "dependencies":
     {
-        "xml": ">= 0.0.4"
+        "xml": ">= 0.0.4",
+        "mime": ">= 1.2.9"
     },
     "main": "lib/rss.js",
     "engines": { "node": ">=0.4.0" },

@@ -35,6 +35,7 @@
         guid: '1123', // optional - defaults to url
         author: 'Guest Author', // optional - defaults to feed author property
         date: 'May 27, 2012' // any format that js Date can parse.
+        enclosure : {url:'...', file:'path-to-file'} // optional
     });
 
     // cache the xml
@@ -97,7 +98,7 @@ especially when tests are included.
 
 (The MIT License)
 
-Copyright (c) 2011 Dylan Greene <dylang@gmail.com>
+Copyright (c) 2011-2013 Dylan Greene <dylang@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
