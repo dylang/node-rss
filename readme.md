@@ -24,7 +24,15 @@
             feed_url: 'http://example.com/rss.xml',
             site_url: 'http://example.com',
             image_url: 'http://example.com/icon.png',
-            author: 'Dylan Greene'
+            docs: 'http://example.com/rss/docs.html',
+            author: 'Dylan Greene',
+            managingEditor: 'Dylan Green',
+            webMaster: 'Dylan Green',
+            copyright: '2013 Dylan Green',
+            language: 'en',
+            categories: ['Category 1','Category 2','Category 3'],
+            pubDate: 'May 20, 2012 04:00:00 GMT',
+            ttl: '60'
         });
 
     /* loop over data and add to feed */
@@ -48,7 +56,15 @@
  * _feed_url_ <url> Url to the rss feed.
  * _site_url_ <url> Url to the site that the feed is for.
  * _image_url_ <url> Optional. Small image for feed readers to use.
+ * _docs_ <url> Optional. Url to documentation on this feed.
  * _author_ <string> Who owns this feed.
+ * _managingEditor_ <string> Optional. Who manages content in this feed.
+ * _webMaster_ <string> Optional. Who manages feed availability and technical support.
+ * _copyright_ <string> Optional. Copyright information for this feed.
+ * _language_ <string> Optional. The language of the content of this feed.
+ * _categories_ <array> Optional. One or more categories this feed belongs to.
+ * _pubDate_ <Date object or date string> Optional. The publication date for content in the feed
+ * _ttl_ <int> Optional. Number of minutes feed can be cached before refreshing from source.
 
 ### Item Options
 
