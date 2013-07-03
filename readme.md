@@ -33,6 +33,7 @@
         description: 'use this for the content. It can include html.',
         url: 'http://example.com/article4?this&that', // link to the item
         guid: '1123', // optional - defaults to url
+        categories: ['Category 1','Category 2','Category 3','Category 4'], // optional - array of item categories
         author: 'Guest Author', // optional - defaults to feed author property
         date: 'May 27, 2012' // any format that js Date can parse.
         enclosure : {url:'...', file:'path-to-file'} // optional
@@ -62,11 +63,12 @@ an have any number of items. Ten to tenty is usually good.
  * _guid_ <unique string> A unique string feed readers use to know if an item is new or has already been seen.
  If you use a guid never change it.  If you don't provide a guid then your item urls must
  be unique.
+ * _categories_ <array> Optional. If provided, each array item will be added as a category element
  * _author_ <string> Optional.  If included it is the name of the item's creator.
  If not provided the item author will be the same as the feed author.  This is typical
  except on multi-author blogs.
- * _date_ <Date object or date string> The date and time of when the intem was created.  Feed
- readers use this to determin the sort order. Some readers will also use it to determin
+ * _date_ <Date object or date string> The date and time of when the item was created.  Feed
+ readers use this to determine the sort order. Some readers will also use it to determine
  if the content should be presented as unread.
 
 ### Methods
