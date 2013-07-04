@@ -24,7 +24,15 @@
             feed_url: 'http://example.com/rss.xml',
             site_url: 'http://example.com',
             image_url: 'http://example.com/icon.png',
-            author: 'Dylan Greene'
+            docs: 'http://example.com/rss/docs.html',
+            author: 'Dylan Greene',
+            managingEditor: 'Dylan Green',
+            webMaster: 'Dylan Green',
+            copyright: '2013 Dylan Green',
+            language: 'en',
+            categories: ['Category 1','Category 2','Category 3'],
+            pubDate: 'May 20, 2012 04:00:00 GMT',
+            ttl: '60'
         });
 
     /* loop over data and add to feed */
@@ -33,6 +41,7 @@
         description: 'use this for the content. It can include html.',
         url: 'http://example.com/article4?this&that', // link to the item
         guid: '1123', // optional - defaults to url
+        categories: ['Category 1','Category 2','Category 3','Category 4'], // optional - array of item categories
         author: 'Guest Author', // optional - defaults to feed author property
         date: 'May 27, 2012' // any format that js Date can parse.
         enclosure : {url:'...', file:'path-to-file'} // optional
@@ -48,7 +57,15 @@
  * _feed_url_ <url> Url to the rss feed.
  * _site_url_ <url> Url to the site that the feed is for.
  * _image_url_ <url> Optional. Small image for feed readers to use.
+ * _docs_ <url> Optional. Url to documentation on this feed.
  * _author_ <string> Who owns this feed.
+ * _managingEditor_ <string> Optional. Who manages content in this feed.
+ * _webMaster_ <string> Optional. Who manages feed availability and technical support.
+ * _copyright_ <string> Optional. Copyright information for this feed.
+ * _language_ <string> Optional. The language of the content of this feed.
+ * _categories_ <array> Optional. One or more categories this feed belongs to.
+ * _pubDate_ <Date object or date string> Optional. The publication date for content in the feed
+ * _ttl_ <int> Optional. Number of minutes feed can be cached before refreshing from source.
 
 ### Item Options
 
@@ -62,11 +79,12 @@ an have any number of items. Ten to tenty is usually good.
  * _guid_ <unique string> A unique string feed readers use to know if an item is new or has already been seen.
  If you use a guid never change it.  If you don't provide a guid then your item urls must
  be unique.
+ * _categories_ <array> Optional. If provided, each array item will be added as a category element
  * _author_ <string> Optional.  If included it is the name of the item's creator.
  If not provided the item author will be the same as the feed author.  This is typical
  except on multi-author blogs.
- * _date_ <Date object or date string> The date and time of when the intem was created.  Feed
- readers use this to determin the sort order. Some readers will also use it to determin
+ * _date_ <Date object or date string> The date and time of when the item was created.  Feed
+ readers use this to determine the sort order. Some readers will also use it to determine
  if the content should be presented as unread.
 
 ### Methods
