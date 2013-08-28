@@ -54,6 +54,7 @@
 
  * _title_ <string> Title of your site or feed
  * _description_ <string> Optional. Short description of the feed.
+ * _generator_ <string> Optional. Feed generator.
  * _feed_url_ <url> Url to the rss feed.
  * _site_url_ <url> Url to the site that the feed is for.
  * _image_url_ <url> Optional. Small image for feed readers to use.
