@@ -34,6 +34,7 @@ var feed = new RSS(feedOptions);
  * `language` _optional_ **string**  The language of the content of this feed.
  * `categories` _optional_ **array of strings**  One or more categories this feed belongs to.
  * `pubDate` _optional_ **Date object or date string** The publication date for content in the feed
+ * `georss` _optional_ **boolean**  Whether to make the feed a GeoRSS feed. Default is `false`.
  * `ttl` _optional_ **integer** Number of minutes feed can be cached before refreshing from source.
 
 ### Add items to a feed
@@ -60,6 +61,8 @@ feed.item(itemOptions);
  * `date` **Date object or date string** The date and time of when the item was created.  Feed
  readers use this to determine the sort order. Some readers will also use it to determine
  if the content should be presented as unread.
+ * `lat` _required if is a GeoRSS feed_ **number** The latitude coordinate of the item. 
+ * `lng` _required if is a GeoRSS feed_ **number** The longitude coordinate of the item.
 
 #### Feed XML
 
@@ -92,6 +95,7 @@ var feed = new RSS({
         language: 'en',
         categories: ['Category 1','Category 2','Category 3'],
         pubDate: 'May 20, 2012 04:00:00 GMT',
+        georss: true, //set this flag if you wish for the feed to be returned in GeoRSS. A lat/lng field will be expected for each item.
         ttl: '60'
     });
 
@@ -104,6 +108,8 @@ feed.item({
     categories: ['Category 1','Category 2','Category 3','Category 4'], // optional - array of item categories
     author: 'Guest Author', // optional - defaults to feed author property
     date: 'May 27, 2012' // any format that js Date can parse.
+    // lat: 33.417974, //latitude field. Provide if georss is true in the feed setup.
+    // lng: -111.933231, //longitude field. Provide if georss is true in the feed setup.
     enclosure : {url:'...', file:'path-to-file'} // optional
 });
 
