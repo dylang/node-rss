@@ -1,6 +1,8 @@
-# RSS for Node
+# RSS for Node [![Build Status](https://secure.travis-ci.org/dylang/node-rss.png)](http://travis-ci.org/dylang/node-rss)
 
-  Fast and simple Javascript-based RSS generator/builder for Node projects.
+  [![NPM](https://nodei.co/npm/rss.png?downloads=true)](https://nodei.co/npm/rss/)
+
+> Fast and simple RSS generator/builder for Node projects.
 
 ## Install
 
