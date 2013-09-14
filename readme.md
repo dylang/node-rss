@@ -6,13 +6,6 @@
 
     $ npm install rss
 
-## Tests
-
- Use [nodeunit](https://github.com/caolan/nodeunit) to run the tests.
-
-    $ npm install nodeunit
-    $ nodeunit test
-
 ## Usage
 
     var RSS = require('rss');
@@ -93,6 +86,12 @@ an have any number of items. Ten to tenty is usually good.
  * _item(item_options)_ - add an rss item, article, entry etc.
  * _xml([indent])_ - return the xml.  If you pass in true it will use four spaces for indenting. If you prefer
  tabs use \t instead of true.
+
+## Tests
+
+ Mocha tests are included. Use `npm test` to run the tests.
+
+    $ npm test
 
 ## Notes
  * You do not need to escape anything. This module will escape characters when necessary.

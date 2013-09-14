@@ -27,7 +27,14 @@
         "xml": ">= 0.0.4",
         "mime": ">= 1.2.9"
     },
+    "devDependencies": {
+      "chai": "~1.7.2",
+      "mocha": "~1.12.0"
+    },
     "main": "lib/rss.js",
+    "scripts": {
+      "test": "./node_modules/.bin/mocha --reporter spec"
+    },
     "engines": { "node": ">=0.4.0" },
     "licenses" :
     [
