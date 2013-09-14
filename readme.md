@@ -77,7 +77,7 @@ an have any number of items. Ten to twenty is usually good.
  If you use a guid never change it.  If you don't provide a guid then your item urls must
  be unique.
  * `categories` _optional_ **array of strings** If provided, each array item will be added as a category element
- * `author` _optional_  *string*  If included it is the name of the item's creator.
+ * `author` _optional_  **string**  If included it is the name of the item's creator.
  If not provided the item author will be the same as the feed author.  This is typical
  except on multi-author blogs.
  * `date` **Date object or date string** The date and time of when the item was created.  Feed
