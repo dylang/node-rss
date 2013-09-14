@@ -10,7 +10,8 @@
         "Michael R. Lange",
         "Victor Jonsson",
         "Danny Graham",
-        "Patrick Garman <contact@pmgarman.me>"
+        "Patrick Garman <contact@pmgarman.me>",
+        "Fred Morstatter"
     ],
     "repository":
     {
@@ -24,8 +25,8 @@
     },
     "dependencies":
     {
-        "xml": ">= 0.0.4",
-        "mime": ">= 1.2.9"
+        "xml": "~0.0.4",
+        "mime": "~1.2.11"
     },
     "devDependencies": {
       "chai": "~1.7.2",
