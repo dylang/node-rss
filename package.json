@@ -25,7 +25,7 @@
     },
     "dependencies":
     {
-        "xml": "~0.0.4",
+        "xml": "~0.0.8",
         "mime": "~1.2.11"
     },
     "devDependencies": {
