@@ -105,10 +105,10 @@ feed.item({
     guid: '1123', // optional - defaults to url
     categories: ['Category 1','Category 2','Category 3','Category 4'], // optional - array of item categories
     author: 'Guest Author', // optional - defaults to feed author property
-    date: 'May 27, 2012' // any format that js Date can parse.
+    date: 'May 27, 2012', // any format that js Date can parse.
     lat: 33.417974, //optional latitude field for GeoRSS
     long: -111.933231, //optional longitude field for GeoRSS
-    enclosure : {url:'...', file:'path-to-file'} // optional enclosure
+    enclosure: {url:'...', file:'path-to-file'} // optional enclosure
 });
 
 // cache the xml to send to clients
