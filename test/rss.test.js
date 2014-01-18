@@ -216,5 +216,33 @@ describe('rss module', function(done) {
         expect(result).to.equal(expectedResult);
         done();
     });
+
+    it('should work with PubSubHubbub hub', function(done) {
+        var feed = new RSS({
+            title: 'title',
+            description: 'description',
+            feed_url: 'http://example.com/rss.xml',
+            site_url: 'http://example.com',
+            hub: 'http://example.com/hub'
+        });
+
+        var expectedResult = '<?xml version="1.0" encoding="UTF-8"?>\n'+
+                             '<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">'+
+                                 '<channel>'+
+                                     '<title><![CDATA[title]]></title>'+
+                                     '<description><![CDATA[description]]></description>'+
+                                     '<link>http://example.com</link>'+
+                                     '<generator>RSS for Node</generator>'+
+                                     '<lastBuildDate>' + new Date().toUTCString() +'</lastBuildDate>'+
+                                     '<atom:link href="http://example.com/rss.xml" rel="self" type="application/rss+xml"/>'+
+                                     '<atom:link href="http://example.com/hub" rel="hub"/>'+
+                                 '</channel>'+
+                             '</rss>';
+
+        var result = feed.xml();
+
+        expect(result).to.equal(expectedResult);
+        done();
+    });
 });
 
