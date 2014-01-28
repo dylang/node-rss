@@ -1,6 +1,6 @@
 {
   "name": "rss",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "RSS feed generator. A really simple API to add RSS feeds to any project.",
   "homepage": "http://github.com/dylang/node-rss",
   "author": "Dylan Greene <dylang@gmail.com>",
@@ -12,7 +12,7 @@
     "Danny Graham",
     "Patrick Garman <contact@pmgarman.me>",
     "Fred Morstatter",
-    "Eric Vantillard https://github.com/evantill"
+    "Eric Vantillard <eric.vantillard@evaxion.fr>"
   ],
   "repository": {
     "type": "git",
