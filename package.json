@@ -28,7 +28,9 @@
   },
   "devDependencies": {
     "chai": "~1.8.1",
-    "mocha": "~1.17.0"
+    "mocha": "~1.17.0",
+    "xml2js": "~0.4.1",
+    "q": "~1.0.0"
   },
   "main": "lib/rss.js",
   "scripts": {
