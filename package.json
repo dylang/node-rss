@@ -1,6 +1,6 @@
 {
     "name": "rss",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "RSS feed generator. A really simple API to add RSS feeds to any project.",
     "homepage": "http://github.com/dylang/node-rss",
     "author": "Dylan Greene <dylang@gmail.com>",
@@ -11,7 +11,8 @@
         "Victor Jonsson",
         "Danny Graham",
         "Patrick Garman <contact@pmgarman.me>",
-        "Fred Morstatter"
+        "Fred Morstatter",
+        "Eric Vantillard <eric.vantillard@evaxion.fr>"
     ],
     "repository": {
         "type": "git",
@@ -27,7 +28,9 @@
     },
     "devDependencies": {
         "chai": "~1.8.1",
-        "mocha": "~1.17.0"
+        "mocha": "~1.17.0",
+        "xml2js": "~0.4.1",
+        "q": "~1.0.0"
     },
     "main": "lib/rss.js",
     "scripts": {
