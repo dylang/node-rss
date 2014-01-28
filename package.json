@@ -1,45 +1,46 @@
 {
-    "name": "rss",
-    "version": "0.3.0",
-    "description": "RSS feed generator. A really simple API to add RSS feeds to any project.",
-    "homepage": "http://github.com/dylang/node-rss",
-    "author": "Dylan Greene <dylang@gmail.com>",
-    "contributors": [
-        "Dylan Greene <dylang@gmail.com>",
-        "Xavier Damman <xdamman@gmail.com>",
-        "Michael R. Lange",
-        "Victor Jonsson",
-        "Danny Graham",
-        "Patrick Garman <contact@pmgarman.me>",
-        "Fred Morstatter"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "http://github.com/dylang/node-rss"
-    },
-    "bugs": {
-        "mail": "dylang@gmail.com",
-        "url": "http://github.com/dylang/node-rss/issues"
-    },
-    "dependencies": {
-        "xml": "~0.0.4",
-        "mime": "~1.2.11"
-    },
-    "devDependencies": {
-        "chai": "~1.8.1",
-        "mocha": "~1.17.0"
-    },
-    "main": "lib/rss.js",
-    "scripts": {
-        "test": "./node_modules/.bin/mocha --reporter spec"
-    },
-    "engines": {
-        "node": ">=0.4.0"
-    },
-    "licenses": [
-        {
-            "type": "MIT",
-            "url": "http://github.com/dylang/node-rss/raw/master/LICENSE"
-        }
-    ]
+  "name": "rss",
+  "version": "0.3.1",
+  "description": "RSS feed generator. A really simple API to add RSS feeds to any project.",
+  "homepage": "http://github.com/dylang/node-rss",
+  "author": "Dylan Greene <dylang@gmail.com>",
+  "contributors": [
+    "Dylan Greene <dylang@gmail.com>",
+    "Xavier Damman <xdamman@gmail.com>",
+    "Michael R. Lange",
+    "Victor Jonsson",
+    "Danny Graham",
+    "Patrick Garman <contact@pmgarman.me>",
+    "Fred Morstatter",
+    "Eric Vantillard https://github.com/evantill"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/dylang/node-rss"
+  },
+  "bugs": {
+    "mail": "dylang@gmail.com",
+    "url": "http://github.com/dylang/node-rss/issues"
+  },
+  "dependencies": {
+    "xml": "~0.0.12",
+    "mime": "~1.2.11"
+  },
+  "devDependencies": {
+    "chai": "~1.8.1",
+    "mocha": "~1.17.0"
+  },
+  "main": "lib/rss.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec"
+  },
+  "engines": {
+    "node": ">=0.4.0"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/dylang/node-rss/raw/master/LICENSE"
+    }
+  ]
 }
