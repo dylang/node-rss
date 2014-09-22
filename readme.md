@@ -40,7 +40,7 @@ var feed = new RSS(feedOptions);
 ### Add items to a feed
 
 An item can be used for a blog entry, project update, log entry, etc.  Your RSS feed
-an have any number of items. Most feeds use 20 or fewer items.
+can have any number of items. Most feeds use 20 or fewer items.
 
 ```js
 feed.item(itemOptions);
