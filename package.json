@@ -1,6 +1,6 @@
 {
   "name": "rss",
-  "version": "0.3.2",
+  "version": "1.0.0",
   "description": "RSS feed generator. A really simple API to add RSS feeds to any project.",
   "homepage": "http://github.com/dylang/node-rss",
   "author": "Dylan Greene <dylang@gmail.com>",
@@ -23,26 +23,18 @@
     "url": "http://github.com/dylang/node-rss/issues"
   },
   "dependencies": {
-    "xml": "~0.0.12",
-    "mime": "~1.2.11"
+    "mime": "^1.2.11",
+    "xml": "^1.0.0"
   },
   "devDependencies": {
-    "chai": "~1.8.1",
-    "mocha": "~1.17.0",
-    "xml2js": "~0.4.1",
-    "q": "~1.0.0"
+    "chai": "^1.9.1",
+    "mocha": "^1.21.4",
+    "q": "^1.0.0",
+    "xml2js": "^0.4.1"
   },
   "main": "lib/rss.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter spec"
+    "test": "mocha --reporter spec"
   },
-  "engines": {
-    "node": ">=0.4.0"
-  },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://github.com/dylang/node-rss/raw/master/LICENSE"
-    }
-  ]
+  "licenses": "MIT"
 }
