@@ -127,9 +127,9 @@ Tests included use Mocha. Use `npm test` to run the tests.
 
 # History
 
-I started this module over two years ago (April 2011) because there weren't any Node modules
-for creating RSS. Besides these [25 modules](https://npmjs.org/browse/depended/rss)
-I would love to know what other projects are using it.
+I started this module *years* ago (April 2011) because there weren't any Node modules
+for creating RSS. [Nearly 50 modules](https://npmjs.org/browse/depended/rss)
+use RSS, as well as many web sites and the popular [Ghost publishing platform](https://ghost.org/).
 
 # Contributing
 
