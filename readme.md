@@ -1,4 +1,4 @@
-# RSS for Node [![Build Status](https://secure.travis-ci.org/dylang/node-rss.png)](http://travis-ci.org/dylang/node-rss)
+# RSS for Node [![Build Status](https://api.travis-ci.org/dylang/node-rss.svg)](http://travis-ci.org/dylang/node-rss)
 
   [![NPM](https://nodei.co/npm/rss.png?downloads=true)](https://nodei.co/npm/rss/)
 
