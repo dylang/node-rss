@@ -1,4 +1,4 @@
-# RSS for Node [![Build Status](https://secure.travis-ci.org/dylang/node-rss.png)](http://travis-ci.org/dylang/node-rss)
+# RSS for Node [![Build Status](https://api.travis-ci.org/dylang/node-rss.svg)](http://travis-ci.org/dylang/node-rss)
 
   [![NPM](https://nodei.co/npm/rss.png?downloads=true)](https://nodei.co/npm/rss/)
 
@@ -40,7 +40,7 @@ var feed = new RSS(feedOptions);
 ### Add items to a feed
 
 An item can be used for a blog entry, project update, log entry, etc.  Your RSS feed
-an have any number of items. Most feeds use 20 or fewer items.
+can have any number of items. Most feeds use 20 or fewer items.
 
 ```js
 feed.item(itemOptions);
