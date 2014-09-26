@@ -27,7 +27,6 @@ var feed = new RSS(feedOptions);
  * `site_url` **url string** Url to the site that the feed is for.
  * `image_url` _optional_  **url string* Small image for feed readers to use.
  * `docs` _optional_ **url string** Url to documentation on this feed.
- * `author` **string** Who owns this feed.
  * `managingEditor` _optional_ **string** Who manages content in this feed.
  * `webMaster` _optional_ **string** Who manages feed availability and technical support.
  * `copyright` _optional_ **string** Copyright information for this feed.
@@ -88,7 +87,6 @@ var feed = new RSS({
     site_url: 'http://example.com',
     image_url: 'http://example.com/icon.png',
     docs: 'http://example.com/rss/docs.html',
-    author: 'Dylan Greene',
     managingEditor: 'Dylan Greene',
     webMaster: 'Dylan Greene',
     copyright: '2013 Dylan Greene',
@@ -143,7 +141,7 @@ are included.
 
 (The MIT License)
 
-Copyright (c) 2011-2013 Dylan Greene <dylang@gmail.com>
+Copyright (c) 2011-2014 Dylan Greene <dylang@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
