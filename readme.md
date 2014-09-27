@@ -35,6 +35,7 @@ var feed = new RSS(feedOptions);
  * `pubDate` _optional_ **Date object or date string** The publication date for content in the feed
  * `ttl` _optional_ **integer** Number of minutes feed can be cached before refreshing from source.
  * `hub` _optional_ **PubSubHubbub hub url** Where is the PubSubHubb hub located.
+ * `cdata` _optional_ **boolean** Wrap content to CDATA if **true**. Default value is **true**.
 
 ### Add items to a feed
 
