@@ -1,17 +1,17 @@
 {
   "name": "rss",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "RSS feed generator. Add RSS feeds to any project. Supports enclosures and GeoRSS.",
   "keywords": [
-      "rss",
-      "xml",
-      "atom",
-      "podcasts",
-      "ghost",
-      "feed",
-      "feed builder",
-      "rss feed"
-    ],
+    "rss",
+    "xml",
+    "atom",
+    "podcasts",
+    "ghost",
+    "feed",
+    "feed builder",
+    "rss feed"
+  ],
   "main": "lib/rss.js",
   "scripts": {
     "test": "grunt test"
