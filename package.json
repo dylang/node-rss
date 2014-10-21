@@ -34,10 +34,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "http://github.com/dylang/node-rss"
+    "url": "http://github.com/dylang/node-rss.git"
   },
   "bugs": {
-    "mail": "dylang@gmail.com",
     "url": "http://github.com/dylang/node-rss/issues"
   },
   "dependencies": {
