@@ -1,9 +1,26 @@
 {
   "name": "rss",
   "version": "1.0.0",
-  "description": "RSS feed generator. A really simple API to add RSS feeds to any project.",
+  "description": "RSS feed generator. Add RSS feeds to any project. Supports enclosures and GeoRSS.",
+  "keywords": [
+      "rss",
+      "xml",
+      "atom",
+      "podcasts",
+      "ghost",
+      "feed",
+      "feed builder",
+      "rss feed"
+    ],
+  "main": "lib/rss.js",
+  "scripts": {
+    "test": "grunt test"
+  },
   "homepage": "http://github.com/dylang/node-rss",
-  "author": "Dylan Greene <dylang@gmail.com>",
+  "author": {
+    "name": "Dylan Greene",
+    "email": "dylang@gmail.com"
+  },
   "contributors": [
     "Dylan Greene <dylang@gmail.com>",
     "Xavier Damman <xdamman@gmail.com>",
@@ -12,7 +29,8 @@
     "Danny Graham",
     "Patrick Garman <contact@pmgarman.me>",
     "Fred Morstatter",
-    "Eric Vantillard <eric.vantillard@evaxion.fr>"
+    "Eric Vantillard <eric.vantillard@evaxion.fr>",
+    "Jason Karns <jasonkarns>"
   ],
   "repository": {
     "type": "git",
@@ -29,14 +47,15 @@
   "devDependencies": {
     "chai": "^1.9.1",
     "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-mocha-test": "^0.12.1",
     "grunt-release": "^0.7.0",
+    "grunt-templates-dylang": "^1.0.0",
+    "load-grunt-tasks": "^0.6.0",
     "mocha": "^1.21.4",
     "q": "^1.0.0",
+    "time-grunt": "^1.0.0",
     "xml2js": "^0.4.1"
-  },
-  "main": "lib/rss.js",
-  "scripts": {
-    "test": "mocha --reporter spec"
   },
   "licenses": "MIT"
 }

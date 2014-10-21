@@ -1,16 +1,18 @@
-# RSS for Node [![Build Status](https://api.travis-ci.org/dylang/node-rss.svg)](http://travis-ci.org/dylang/node-rss)
+## rss [![NPM version](https://badge.fury.io/js/rss.png)](http://badge.fury.io/js/rss)  [![Build Status](http://github.com/dylang/node-rss.png)](http://github.com/dylang/node-rss) 
 
-  [![NPM](https://nodei.co/npm/rss.png?downloads=true)](https://nodei.co/npm/rss/)
+> RSS feed generator. Add RSS feeds to any project. Supports enclosures and GeoRSS.
 
-> Fast and simple RSS generator/builder for Node projects. Supports enclosures and GeoRSS.
+[![rss](https://nodei.co/npm/rss.png?downloads=true "rss")](https://nodei.co/npm/rss)
 
-## Install
 
-    $ npm install rss
 
-## Usage
 
-### Create a new feed
+
+
+
+### Usage
+
+#### Create a new feed
 
 ```js
 var RSS = require('rss');
@@ -18,7 +20,7 @@ var RSS = require('rss');
 var feed = new RSS(feedOptions);
 ```
 
-#### `feedOptions`
+##### `feedOptions`
 
  * `title` **string** Title of your site or feed
  * `description` _optional_ **string** A short description of the feed.
@@ -34,9 +36,9 @@ var feed = new RSS(feedOptions);
  * `categories` _optional_ **array of strings**  One or more categories this feed belongs to.
  * `pubDate` _optional_ **Date object or date string** The publication date for content in the feed
  * `ttl` _optional_ **integer** Number of minutes feed can be cached before refreshing from source.
- * `hub` _optional_ **PubSubHubbub hub url** Where is the PubSubHubb hub located.
+ * `hub` _optional_ **PubSubHubbub hub url** Where is the PubSubHub hub located.
 
-### Add items to a feed
+#### Add items to a feed
 
 An item can be used for a blog entry, project update, log entry, etc.  Your RSS feed
 can have any number of items. Most feeds use 20 or fewer items.
@@ -45,7 +47,7 @@ can have any number of items. Most feeds use 20 or fewer items.
 feed.item(itemOptions);
 ```
 
-#### itemOptions
+##### itemOptions
 
  * `title` **string** Title of this particular item.
  * `description` **string** Content for the item.  Can contain html but link and image urls must be absolute path including hostname.
@@ -63,7 +65,7 @@ feed.item(itemOptions);
  * `lat` _optional_ **number** The latitude coordinate of the item.
  * `long` _optional_ **number** The longitude coordinate of the item.
 
-#### Feed XML
+##### Feed XML
 
 ```js
 var xml = feed.xml(indent);
@@ -74,7 +76,8 @@ This returns the XML as a string.
 `indent` _optional_ **string** What to use as a tab. Defaults to no tabs (compressed).
  For example you can use `'\t'` for tab character, or `'  '` for two-space tabs.
 
-## Example Usage
+
+### Example Usage
 
 ```js
 var RSS = require('rss');
@@ -114,50 +117,71 @@ feed.item({
 var xml = feed.xml();
 ```
 
-## Tests
 
-Tests included use Mocha. Use `npm test` to run the tests.
 
-    $ npm test
 
-## Notes
+
+### Notes
+
  * You do not need to escape anything. This module will escape characters when necessary.
  * This module is very fast but you might as well cache the output of xml() and serve
  it until something changes.
 
-# History
+
+
+### Inspiration
 
 I started this module *years* ago (April 2011) because there weren't any Node modules
 for creating RSS. [Nearly 50 modules](https://npmjs.org/browse/depended/rss)
 use RSS, as well as many web sites and the popular [Ghost publishing platform](https://ghost.org/).
 
-# Contributing
+
+
+### Contributing
 
 Contributions to the project are welcome. Feel free to fork and improve.
 I do my best accept pull requests in a timely manor, especially when tests and updated docs
 are included.
 
-# License
 
-(The MIT License)
 
-Copyright (c) 2011-2014 Dylan Greene <dylang@gmail.com>
+### About the Author
 
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-'Software'), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
+Hello fellow developer! My name is [Dylan Greene](https://github.com/dylang). When
+not overwhelmed with my two kids I enjoy contributing to the open source community.
+I'm a tech lead at [Opower](http://opower.com). I lead a team using Grunt and Angular to build software that
+successfully helps people like us use less power.
+Not too long ago I co-created [Doodle or Die](http://doodleordie.com), a hilarious web game with millions of
+doodles that won us Node Knockout for the "most fun" category.
+I'm [dylang](https://twitter.com/dylang) on Twitter and other places.
 
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
+Some of my other Node projects:
 
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+| Name | Description | Github Stars | Npm Installs |
+|---|---|--:|--:|
+| [`grunt-notify`](https://github.com/dylang/grunt-notify) | Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion and Mavericks Notification Center, and Notify-Send. | 810 | 41,939 |
+| [`grunt-prompt`](https://github.com/dylang/grunt-prompt) | Interactive prompt for your Grunt config using console checkboxes, text input with filtering, password fields. | 249 | 7,144 |
+| [`shortid`](https://github.com/dylang/shortid) | Amazingly short non-sequential url-friendly unique id generator. | 268 | 11,035 |
+| [`xml`](https://github.com/dylang/node-xml) | Fast and simple xml generator. Supports attributes, CDATA, etc. Includes tests and examples. | 57 | 22,645 |
+| [`changelog`](https://github.com/dylang/changelog) | Command line tool (and Node module) that generates a changelog in color output, markdown, or json for modules in npmjs.org's registry as well as any public github.com repo. | 61 | 297 |
+| [`npm-check`](https://github.com/dylang/npm-check) | Check for outdated, incorrect, and unused dependencies. | _New!_ | 237 |
+| [`grunt-attention`](https://github.com/dylang/grunt-attention) | Display attention-grabbing messages in the terminal | _New!_ | 7,906 |
+| [`logging`](https://github.com/dylang/logging) | Super sexy color console logging with cluster support. | 24 | 239 |
+| [`observatory`](https://github.com/dylang/observatory) | Beautiful UI for showing tasks running on the command line. | 31 | 6,624 |
+| [`flowdock-refined`](https://github.com/dylang/flowdock-refined) | Flowdock desktop app custom UI | _New!_ | 49 |
+| [`anthology`](https://github.com/dylang/anthology) | Module information and stats for any @npmjs user | _New!_ | 244 |
+| [`grunt-cat`](https://github.com/dylang/grunt-cat) | Echo a file to the terminal. Works with text, figlets, ascii art, and full-color ansi. | _New!_ | 235 |
+
+_This list was generated using [anthology](https://github.com/dylang/anthology)._
+
+
+### License
+Copyright (c) 2014 Dylan Greene, contributors.
+
+Released under the [MIT license](https://tldrlegal.com/license/mit-license).
+
+Screenshots are [CC BY-SA](http://creativecommons.org/licenses/by-sa/4.0/) (Attribution-ShareAlike).
+
+***
+_Generated using [grunt-readme](https://github.com/assemble/grunt-readme) with [grunt-templates-dylang](https://github.com/dylang/grunt-templates-dylang) on Tuesday, October 21, 2014._ [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/dylang/rss/trend.png)](https://bitdeli.com/free "Bitdeli Badge") [![Google Analytics](https://ga-beacon.appspot.com/UA-4820261-3/dylang/rss)](https://github.com/igrigorik/ga-beacon)
+
