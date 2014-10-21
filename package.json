@@ -28,6 +28,8 @@
   },
   "devDependencies": {
     "chai": "^1.9.1",
+    "grunt": "^0.4.5",
+    "grunt-release": "^0.7.0",
     "mocha": "^1.21.4",
     "q": "^1.0.0",
     "xml2js": "^0.4.1"
