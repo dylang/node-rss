@@ -1,4 +1,4 @@
-## rss [![NPM version](https://badge.fury.io/js/rss.svg)](http://badge.fury.io/js/rss)  [![Build Status](https://travis-ci.org/dylang/node-rss.svg)](https://travis-ci.org/dylang/node-rss)
+## rss [![NPM version](https://badge.fury.io/js/rss.svg)](http://badge.fury.io/js/rss)  [![Build Status](https://travis-ci.org/dylang/node-rss.svg)](https://travis-ci.org/dylang/node-rss) 
 
 > RSS feed generator. Add RSS feeds to any project. Supports enclosures and GeoRSS.
 
