@@ -270,13 +270,8 @@ describe('rss module', function(done) {
                     feed_url: 'http://example.com/rss.xml',
                     site_url: 'http://example.com',
                     author: 'Dylan Greene',
-                    categories: ['Category 1','Category 2','Category 3'],
                     pubDate: 'May 20, 2012 04:00:00 GMT',
-                    docs: 'http://example.com/rss/docs.html',
-                    copyright: '2013 Dylan Green',
                     language: 'en',
-                    managingEditor: 'Dylan Green',
-                    webMaster: 'Dylan Green',
                     ttl: '60',
                     custom: [
                       {'itunes:subtitle': 'A show about everything'},
@@ -332,15 +327,8 @@ describe('rss module', function(done) {
                 '<atom:link href="http://example.com/rss.xml" rel="self" type="application/rss+xml"/>' +
                 '<author><![CDATA[Dylan Greene]]></author>' +
                 '<pubDate>Sun, 20 May 2012 04:00:00 GMT</pubDate>' +
-                '<copyright>2013 Dylan Green</copyright>' +
-                '<managingEditor>Dylan Green</managingEditor>' +
-                '<webMaster>Dylan Green</webMaster>' +
-                '<docs>http://example.com/rss/docs.html</docs>' +
                 '<language><![CDATA[en]]></language>' +
                 '<ttl>60</ttl>' +
-                '<category>Category 1</category>' +
-                '<category>Category 2</category>' +
-                '<category>Category 3</category>' +
                 '<itunes:subtitle>A show about everything</itunes:subtitle>' +
                 '<itunes:author>John Doe</itunes:author>' +
                 '<itunes:summary>All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our podcast in the Podcasts app or in the iTunes Store</itunes:summary>' +
