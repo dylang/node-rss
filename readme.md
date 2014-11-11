@@ -37,6 +37,8 @@ var feed = new RSS(feedOptions);
  * `pubDate` _optional_ **Date object or date string** The publication date for content in the feed
  * `ttl` _optional_ **integer** Number of minutes feed can be cached before refreshing from source.
  * `hub` _optional_ **PubSubHubbub hub url** Where is the PubSubHub hub located.
+ * `customNamespaces` _optional_ **object** Put additional namespaces in <rss> element (without 'xmlns:' prefix)
+ * `custom` _optional_ **array** Put additional elements in the feed (node-xml syntax)
 
 #### Add items to a feed
 
@@ -64,6 +66,7 @@ feed.item(itemOptions);
  if the content should be presented as unread.
  * `lat` _optional_ **number** The latitude coordinate of the item.
  * `long` _optional_ **number** The longitude coordinate of the item.
+ * `custom` _optional_ **array** Put additional elements in the item (node-xml syntax)
 
 ##### Feed XML
 
@@ -96,7 +99,34 @@ var feed = new RSS({
     language: 'en',
     categories: ['Category 1','Category 2','Category 3'],
     pubDate: 'May 20, 2012 04:00:00 GMT',
-    ttl: '60'
+    ttl: '60',
+    customNamespaces: {
+      'itunes': 'http://www.itunes.com/dtds/podcast-1.0.dtd'
+    },
+    custom: [
+      {'itunes:subtitle': 'A show about everything'},
+      {'itunes:author': 'John Doe'},
+      {'itunes:summary': 'All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our podcast in the Podcasts app or in the iTunes Store'},
+      {'itunes:owner': [
+        {'itunes:name': 'John Doe'},
+        {'itunes:email': 'john.doe@example.com'}
+      ]},
+      {'itunes:image': {
+        _attr: {
+          href: 'http://example.com/podcasts/everything/AllAboutEverything.jpg'
+        }
+      }},
+      {'itunes:category': [
+        {_attr: {
+          text: 'Technology'
+        }},
+        {'itunes:category': {
+          _attr: {
+            text: 'Gadgets'
+          }
+        }}
+      ]}
+    ]
 });
 
 /* loop over data and add to feed */
@@ -110,7 +140,17 @@ feed.item({
     date: 'May 27, 2012', // any format that js Date can parse.
     lat: 33.417974, //optional latitude field for GeoRSS
     long: -111.933231, //optional longitude field for GeoRSS
-    enclosure: {url:'...', file:'path-to-file'} // optional enclosure
+    enclosure: {url:'...', file:'path-to-file'}, // optional enclosure
+    custom: [
+      {'itunes:author': 'John Doe'},
+      {'itunes:subtitle': 'A short primer on table spices'},
+      {'itunes:image': {
+        _attr: {
+          href: 'http://example.com/podcasts/everything/AllAboutEverything/Episode1.jpg'
+        }
+      }},
+      {'itunes:duration': '7:04'}
+    ]
 });
 
 // cache the xml to send to clients
