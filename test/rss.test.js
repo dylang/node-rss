@@ -273,7 +273,7 @@ describe('rss module', function(done) {
                     pubDate: 'May 20, 2012 04:00:00 GMT',
                     language: 'en',
                     ttl: '60',
-                    custom: [
+                    custom_elements: [
                       {'itunes:subtitle': 'A show about everything'},
                       {'itunes:author': 'John Doe'},
                       {'itunes:summary': 'All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our podcast in the Podcasts app or in the iTunes Store'},
@@ -304,7 +304,7 @@ describe('rss module', function(done) {
             description: 'description 1',
             url: 'http://example.com/article1',
             date: 'May 24, 2012 04:00:00 GMT',
-            custom: [
+            custom_elements: [
               {'itunes:author': 'John Doe'},
               {'itunes:subtitle': 'A short primer on table spices'},
               {'itunes:image': {
@@ -370,10 +370,10 @@ describe('rss module', function(done) {
                     pubDate: 'May 20, 2012 04:00:00 GMT',
                     language: 'en',
                     ttl: '60',
-                    customNamespaces: {
+                    custom_namespaces: {
                       'itunes': 'http://www.itunes.com/dtds/podcast-1.0.dtd'
                     },
-                    custom: [
+                    custom_elements: [
                       {'itunes:subtitle': 'A show about everything'},
                       {'itunes:author': 'John Doe'},
                       {'itunes:summary': 'All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our podcast in the Podcasts app or in the iTunes Store'},
@@ -404,7 +404,7 @@ describe('rss module', function(done) {
             description: 'description 1',
             url: 'http://example.com/article1',
             date: 'May 24, 2012 04:00:00 GMT',
-            custom: [
+            custom_elements: [
               {'itunes:author': 'John Doe'},
               {'itunes:subtitle': 'A short primer on table spices'},
               {'itunes:image': {

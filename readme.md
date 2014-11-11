@@ -37,8 +37,8 @@ var feed = new RSS(feedOptions);
  * `pubDate` _optional_ **Date object or date string** The publication date for content in the feed
  * `ttl` _optional_ **integer** Number of minutes feed can be cached before refreshing from source.
  * `hub` _optional_ **PubSubHubbub hub url** Where is the PubSubHub hub located.
- * `customNamespaces` _optional_ **object** Put additional namespaces in <rss> element (without 'xmlns:' prefix)
- * `custom` _optional_ **array** Put additional elements in the feed (node-xml syntax)
+ * `custom_namespaces` _optional_ **object** Put additional namespaces in <rss> element (without 'xmlns:' prefix)
+ * `custom_elements` _optional_ **array** Put additional elements in the feed (node-xml syntax)
 
 #### Add items to a feed
 
@@ -66,7 +66,7 @@ feed.item(itemOptions);
  if the content should be presented as unread.
  * `lat` _optional_ **number** The latitude coordinate of the item.
  * `long` _optional_ **number** The longitude coordinate of the item.
- * `custom` _optional_ **array** Put additional elements in the item (node-xml syntax)
+ * `custom_elements` _optional_ **array** Put additional elements in the item (node-xml syntax)
 
 ##### Feed XML
 
