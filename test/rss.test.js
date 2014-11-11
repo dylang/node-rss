@@ -277,31 +277,31 @@ describe('rss module', function(done) {
                     language: 'en',
                     managingEditor: 'Dylan Green',
                     webMaster: 'Dylan Green',
-                    ttl: '60'
-                    custom: {
-                      'itunes:subtitle': 'A show about everything',
-                      'itunes:author': 'John Doe',
-                      'itunes:summary': 'All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our podcast in the Podcasts app or in the iTunes Store',
-                      'itunes:owner': {
-                        'itunes:name': 'John Doe',
-                        'itunes:email': 'john.doe@example.com'
-                      },
-                      'itunes:image': {
+                    ttl: '60',
+                    custom: [
+                      {'itunes:subtitle': 'A show about everything'},
+                      {'itunes:author': 'John Doe'},
+                      {'itunes:summary': 'All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our podcast in the Podcasts app or in the iTunes Store'},
+                      {'itunes:owner': [
+                        {'itunes:name': 'John Doe'},
+                        {'itunes:email': 'john.doe@example.com'}
+                      ]},
+                      {'itunes:image': {
                         _attr: {
                           href: 'http://example.com/podcasts/everything/AllAboutEverything.jpg'
                         }
-                      },
-                      'itunes:category': {
-                        _attr: {
+                      }},
+                      {'itunes:category': [
+                        {_attr: {
                           text: 'Technology'
-                        }
-                        'itunes:category': {
+                        }},
+                        {'itunes:category': {
                           _attr: {
                             text: 'Gadgets'
                           }
-                        }
-                      }
-                    }
+                        }}
+                      ]}
+                    ]
                 });
 
         feed.item({
@@ -309,16 +309,16 @@ describe('rss module', function(done) {
             description: 'description 1',
             url: 'http://example.com/article1',
             date: 'May 24, 2012 04:00:00 GMT',
-            custom: {
-              'itunes:author': 'John Doe',
-              'itunes:subtitle': 'A short primer on table spices',
-              'itunes:image': {
+            custom: [
+              {'itunes:author': 'John Doe'},
+              {'itunes:subtitle': 'A short primer on table spices'},
+              {'itunes:image': {
                 _attr: {
                   href: 'http://example.com/podcasts/everything/AllAboutEverything/Episode1.jpg'
                 }
-              },
-              'itunes:duration': '7:04'
-            }
+              }},
+              {'itunes:duration': '7:04'}
+            ]
         });
 
         var expectedResult ='<?xml version="1.0" encoding="utf-16"?>\n' +
