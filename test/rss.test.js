@@ -321,22 +321,22 @@ describe('rss module', function(done) {
             ]
         });
 
-        var expectedResult ='<?xml version="1.0" encoding="utf-16"?>\n' +
-                            '<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">' +
+        var expectedResult ='<?xml version="1.0" encoding="UTF-8"?>\n'+
+                            '<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">'+
             '<channel>' +
-                '<title>title</title>' +
-                '<description>description</description>' +
+                '<title><![CDATA[title]]></title>' +
+                '<description><![CDATA[description]]></description>' +
                 '<link>http://example.com</link>' +
                 '<generator>RSS for Node</generator>' +
                 '<lastBuildDate>' + new Date().toUTCString() +'</lastBuildDate>' +
-                '<atom:link href="http://example.com/rss.xml" rel="self" type="application/rss+xml" />' +
-                '<author>Dylan Greene</author>' +
+                '<atom:link href="http://example.com/rss.xml" rel="self" type="application/rss+xml"/>' +
+                '<author><![CDATA[Dylan Greene]]></author>' +
                 '<pubDate>Sun, 20 May 2012 04:00:00 GMT</pubDate>' +
                 '<copyright>2013 Dylan Green</copyright>' +
-                '<language>en</language>' +
                 '<managingEditor>Dylan Green</managingEditor>' +
                 '<webMaster>Dylan Green</webMaster>' +
                 '<docs>http://example.com/rss/docs.html</docs>' +
+                '<language><![CDATA[en]]></language>' +
                 '<ttl>60</ttl>' +
                 '<category>Category 1</category>' +
                 '<category>Category 2</category>' +
@@ -348,20 +348,20 @@ describe('rss module', function(done) {
                   '<itunes:name>John Doe</itunes:name>' +
                   '<itunes:email>john.doe@example.com</itunes:email>' +
                 '</itunes:owner>' +
-                '<itunes:image href="http://example.com/podcasts/everything/AllAboutEverything.jpg" />' +
+                '<itunes:image href="http://example.com/podcasts/everything/AllAboutEverything.jpg"/>' +
                 '<itunes:category text="Technology">' +
                   '<itunes:category text="Gadgets"/>' +
                 '</itunes:category>' +
                 '<item>' +
-                    '<title>item 1</title>' +
-                    '<description>description 1</description>' +
+                    '<title><![CDATA[item 1]]></title>' +
+                    '<description><![CDATA[description 1]]></description>' +
                     '<link>http://example.com/article1</link>' +
                     '<guid isPermaLink="true">http://example.com/article1</guid>' +
-                    '<dc:creator>Dylan Greene</dc:creator>' +
+                    '<dc:creator><![CDATA[Dylan Greene]]></dc:creator>' +
                     '<pubDate>Thu, 24 May 2012 04:00:00 GMT</pubDate>' +
                     '<itunes:author>John Doe</itunes:author>' +
                     '<itunes:subtitle>A short primer on table spices</itunes:subtitle>' +
-                    '<itunes:image href="http://example.com/podcasts/everything/AllAboutEverything/Episode1.jpg" />' +
+                    '<itunes:image href="http://example.com/podcasts/everything/AllAboutEverything/Episode1.jpg"/>' +
                     '<itunes:duration>7:04</itunes:duration>' +
                 '</item>' +
             '</channel>' +
