@@ -55,6 +55,7 @@ feed.item(itemOptions);
  * `guid` **unique string** A unique string feed readers use to know if an item is new or has already been seen.
  If you use a guid never change it.  If you don't provide a guid then your item urls must
  be unique.
+ * `content` **string** Long form content for the item.  Sets the content:encoded tag of the rss xml.
  * `categories` _optional_ **array of strings** If provided, each array item will be added as a category element
  * `author` _optional_  **string**  If included it is the name of the item's creator.
  If not provided the item author will be the same as the feed author.  This is typical
