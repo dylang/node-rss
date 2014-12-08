@@ -262,5 +262,201 @@ describe('rss module', function(done) {
         expect(result).to.equal(expectedResult);
         done();
     });
-});
 
+    it('should work with custom elements', function(done) {
+        var feed = new RSS({
+                    title: 'title',
+                    description: 'description',
+                    feed_url: 'http://example.com/rss.xml',
+                    site_url: 'http://example.com',
+                    author: 'Dylan Greene',
+                    pubDate: 'May 20, 2012 04:00:00 GMT',
+                    language: 'en',
+                    ttl: '60',
+                    custom_elements: [
+                      {'itunes:subtitle': 'A show about everything'},
+                      {'itunes:author': 'John Doe'},
+                      {'itunes:summary': 'All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our podcast in the Podcasts app or in the iTunes Store'},
+                      {'itunes:owner': [
+                        {'itunes:name': 'John Doe'},
+                        {'itunes:email': 'john.doe@example.com'}
+                      ]},
+                      {'itunes:image': {
+                        _attr: {
+                          href: 'http://example.com/podcasts/everything/AllAboutEverything.jpg'
+                        }
+                      }},
+                      {'itunes:category': [
+                        {_attr: {
+                          text: 'Technology'
+                        }},
+                        {'itunes:category': {
+                          _attr: {
+                            text: 'Gadgets'
+                          }
+                        }}
+                      ]}
+                    ]
+                });
+
+        feed.item({
+            title:  'item 1',
+            description: 'description 1',
+            url: 'http://example.com/article1',
+            date: 'May 24, 2012 04:00:00 GMT',
+            custom_elements: [
+              {'itunes:author': 'John Doe'},
+              {'itunes:subtitle': 'A short primer on table spices'},
+              {'itunes:image': {
+                _attr: {
+                  href: 'http://example.com/podcasts/everything/AllAboutEverything/Episode1.jpg'
+                }
+              }},
+              {'itunes:duration': '7:04'}
+            ]
+        });
+
+        var expectedResult ='<?xml version="1.0" encoding="UTF-8"?>\n'+
+                            '<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">'+
+            '<channel>' +
+                '<title><![CDATA[title]]></title>' +
+                '<description><![CDATA[description]]></description>' +
+                '<link>http://example.com</link>' +
+                '<generator>RSS for Node</generator>' +
+                '<lastBuildDate>' + new Date().toUTCString() +'</lastBuildDate>' +
+                '<atom:link href="http://example.com/rss.xml" rel="self" type="application/rss+xml"/>' +
+                '<author><![CDATA[Dylan Greene]]></author>' +
+                '<pubDate>Sun, 20 May 2012 04:00:00 GMT</pubDate>' +
+                '<language><![CDATA[en]]></language>' +
+                '<ttl>60</ttl>' +
+                '<itunes:subtitle>A show about everything</itunes:subtitle>' +
+                '<itunes:author>John Doe</itunes:author>' +
+                '<itunes:summary>All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our podcast in the Podcasts app or in the iTunes Store</itunes:summary>' +
+                '<itunes:owner>' +
+                  '<itunes:name>John Doe</itunes:name>' +
+                  '<itunes:email>john.doe@example.com</itunes:email>' +
+                '</itunes:owner>' +
+                '<itunes:image href="http://example.com/podcasts/everything/AllAboutEverything.jpg"/>' +
+                '<itunes:category text="Technology">' +
+                  '<itunes:category text="Gadgets"/>' +
+                '</itunes:category>' +
+                '<item>' +
+                    '<title><![CDATA[item 1]]></title>' +
+                    '<description><![CDATA[description 1]]></description>' +
+                    '<link>http://example.com/article1</link>' +
+                    '<guid isPermaLink="true">http://example.com/article1</guid>' +
+                    '<dc:creator><![CDATA[Dylan Greene]]></dc:creator>' +
+                    '<pubDate>Thu, 24 May 2012 04:00:00 GMT</pubDate>' +
+                    '<itunes:author>John Doe</itunes:author>' +
+                    '<itunes:subtitle>A short primer on table spices</itunes:subtitle>' +
+                    '<itunes:image href="http://example.com/podcasts/everything/AllAboutEverything/Episode1.jpg"/>' +
+                    '<itunes:duration>7:04</itunes:duration>' +
+                '</item>' +
+            '</channel>' +
+        '</rss>';
+        var result = feed.xml();
+
+        expect(result).to.equal(expectedResult);
+        done();
+    });
+
+    it('should work with custom namespaces', function(done) {
+        var feed = new RSS({
+                    title: 'title',
+                    description: 'description',
+                    feed_url: 'http://example.com/rss.xml',
+                    site_url: 'http://example.com',
+                    author: 'Dylan Greene',
+                    pubDate: 'May 20, 2012 04:00:00 GMT',
+                    language: 'en',
+                    ttl: '60',
+                    custom_namespaces: {
+                      'itunes': 'http://www.itunes.com/dtds/podcast-1.0.dtd'
+                    },
+                    custom_elements: [
+                      {'itunes:subtitle': 'A show about everything'},
+                      {'itunes:author': 'John Doe'},
+                      {'itunes:summary': 'All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our podcast in the Podcasts app or in the iTunes Store'},
+                      {'itunes:owner': [
+                        {'itunes:name': 'John Doe'},
+                        {'itunes:email': 'john.doe@example.com'}
+                      ]},
+                      {'itunes:image': {
+                        _attr: {
+                          href: 'http://example.com/podcasts/everything/AllAboutEverything.jpg'
+                        }
+                      }},
+                      {'itunes:category': [
+                        {_attr: {
+                          text: 'Technology'
+                        }},
+                        {'itunes:category': {
+                          _attr: {
+                            text: 'Gadgets'
+                          }
+                        }}
+                      ]}
+                    ]
+                });
+
+        feed.item({
+            title:  'item 1',
+            description: 'description 1',
+            url: 'http://example.com/article1',
+            date: 'May 24, 2012 04:00:00 GMT',
+            custom_elements: [
+              {'itunes:author': 'John Doe'},
+              {'itunes:subtitle': 'A short primer on table spices'},
+              {'itunes:image': {
+                _attr: {
+                  href: 'http://example.com/podcasts/everything/AllAboutEverything/Episode1.jpg'
+                }
+              }},
+              {'itunes:duration': '7:04'}
+            ]
+        });
+
+        var expectedResult ='<?xml version="1.0" encoding="UTF-8"?>\n'+
+                            '<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">'+
+            '<channel>' +
+                '<title><![CDATA[title]]></title>' +
+                '<description><![CDATA[description]]></description>' +
+                '<link>http://example.com</link>' +
+                '<generator>RSS for Node</generator>' +
+                '<lastBuildDate>' + new Date().toUTCString() +'</lastBuildDate>' +
+                '<atom:link href="http://example.com/rss.xml" rel="self" type="application/rss+xml"/>' +
+                '<author><![CDATA[Dylan Greene]]></author>' +
+                '<pubDate>Sun, 20 May 2012 04:00:00 GMT</pubDate>' +
+                '<language><![CDATA[en]]></language>' +
+                '<ttl>60</ttl>' +
+                '<itunes:subtitle>A show about everything</itunes:subtitle>' +
+                '<itunes:author>John Doe</itunes:author>' +
+                '<itunes:summary>All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our podcast in the Podcasts app or in the iTunes Store</itunes:summary>' +
+                '<itunes:owner>' +
+                  '<itunes:name>John Doe</itunes:name>' +
+                  '<itunes:email>john.doe@example.com</itunes:email>' +
+                '</itunes:owner>' +
+                '<itunes:image href="http://example.com/podcasts/everything/AllAboutEverything.jpg"/>' +
+                '<itunes:category text="Technology">' +
+                  '<itunes:category text="Gadgets"/>' +
+                '</itunes:category>' +
+                '<item>' +
+                    '<title><![CDATA[item 1]]></title>' +
+                    '<description><![CDATA[description 1]]></description>' +
+                    '<link>http://example.com/article1</link>' +
+                    '<guid isPermaLink="true">http://example.com/article1</guid>' +
+                    '<dc:creator><![CDATA[Dylan Greene]]></dc:creator>' +
+                    '<pubDate>Thu, 24 May 2012 04:00:00 GMT</pubDate>' +
+                    '<itunes:author>John Doe</itunes:author>' +
+                    '<itunes:subtitle>A short primer on table spices</itunes:subtitle>' +
+                    '<itunes:image href="http://example.com/podcasts/everything/AllAboutEverything/Episode1.jpg"/>' +
+                    '<itunes:duration>7:04</itunes:duration>' +
+                '</item>' +
+            '</channel>' +
+        '</rss>';
+        var result = feed.xml();
+
+        expect(result).to.equal(expectedResult);
+        done();
+    });
+});
