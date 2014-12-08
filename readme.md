@@ -1,8 +1,7 @@
-## rss [![NPM version](https://badge.fury.io/js/rss.svg)](http://badge.fury.io/js/rss)  [![Build Status](https://travis-ci.org/dylang/node-rss.svg)](https://travis-ci.org/dylang/node-rss) 
+## rss  [![Build Status](http://img.shields.io/travis/dylang/rss.svg?style=flat-square)](https://travis-ci.org/dylang/rss) [![rss](http://img.shields.io/npm/dm/rss.svg?style=flat-square)](https://www.npmjs.org/package/rss)
 
 > RSS feed generator. Add RSS feeds to any project. Supports enclosures and GeoRSS.
 
-[![rss](https://nodei.co/npm/rss.png?downloads=true "rss")](https://nodei.co/npm/rss)
 
 
 
@@ -66,7 +65,7 @@ feed.item(itemOptions);
  if the content should be presented as unread.
  * `lat` _optional_ **number** The latitude coordinate of the item.
  * `long` _optional_ **number** The longitude coordinate of the item.
- * `custom_elements` _optional_ **array** Put additional elements in the item (node-xml syntax)
+* `custom_elements` _optional_ **array** Put additional elements in the item (node-xml syntax)
 
 ##### Feed XML
 
@@ -185,32 +184,25 @@ are included.
 
 
 
-### About the Author
+### About the Author [![@dylang](https://img.shields.io/badge/github-dylang-green.svg?style=flat-square)](https://github.com/dylang) [![@dylang](https://img.shields.io/badge/twitter-dylang-blue.svg?style=flat-square)](https://twitter.com/dylang)
 
-Hello fellow developer! My name is [Dylan Greene](https://github.com/dylang). When
-not overwhelmed with my two kids I enjoy contributing to the open source community.
-I'm a tech lead at [Opower](http://opower.com). I lead a team using Grunt and Angular to build software that
-successfully helps people like us use less power.
-Not too long ago I co-created [Doodle or Die](http://doodleordie.com), a hilarious web game with millions of
-doodles that won us Node Knockout for the "most fun" category.
-I'm [dylang](https://twitter.com/dylang) on Twitter and other places.
+Hi! Thanks for checking `rss`! My name is **Dylan Greene**. When not overwhelmed with my two young kids I enjoy contributing
+to the open source community. I'm also a tech lead at [Opower](http://opower.com).
 
-Some of my other Node projects:
+Here's some of my other Node projects:
 
-| Name | Description | Github Stars | Npm Installs |
+| Name | Description | npm&nbsp;Downloads |
 |---|---|--:|--:|
-| [`grunt-notify`](https://github.com/dylang/grunt-notify) | Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion and Mavericks Notification Center, and Notify-Send. | 810 | 41,939 |
-| [`grunt-prompt`](https://github.com/dylang/grunt-prompt) | Interactive prompt for your Grunt config using console checkboxes, text input with filtering, password fields. | 249 | 7,144 |
-| [`shortid`](https://github.com/dylang/shortid) | Amazingly short non-sequential url-friendly unique id generator. | 268 | 11,035 |
-| [`xml`](https://github.com/dylang/node-xml) | Fast and simple xml generator. Supports attributes, CDATA, etc. Includes tests and examples. | 57 | 22,645 |
-| [`changelog`](https://github.com/dylang/changelog) | Command line tool (and Node module) that generates a changelog in color output, markdown, or json for modules in npmjs.org's registry as well as any public github.com repo. | 61 | 297 |
-| [`npm-check`](https://github.com/dylang/npm-check) | Check for outdated, incorrect, and unused dependencies. | _New!_ | 237 |
-| [`grunt-attention`](https://github.com/dylang/grunt-attention) | Display attention-grabbing messages in the terminal | _New!_ | 7,906 |
-| [`logging`](https://github.com/dylang/logging) | Super sexy color console logging with cluster support. | 24 | 239 |
-| [`observatory`](https://github.com/dylang/observatory) | Beautiful UI for showing tasks running on the command line. | 31 | 6,624 |
-| [`flowdock-refined`](https://github.com/dylang/flowdock-refined) | Flowdock desktop app custom UI | _New!_ | 49 |
-| [`anthology`](https://github.com/dylang/anthology) | Module information and stats for any @npmjs user | _New!_ | 244 |
-| [`grunt-cat`](https://github.com/dylang/grunt-cat) | Echo a file to the terminal. Works with text, figlets, ascii art, and full-color ansi. | _New!_ | 235 |
+| [`grunt‑notify`](https://github.com/dylang/grunt-notify) | Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion and Mavericks Notification Center, and Notify-Send. | [![grunt-notify](https://img.shields.io/npm/dm/grunt-notify.svg?style=flat-square)](https://www.npmjs.org/package/grunt-notify) |
+| [`grunt‑prompt`](https://github.com/dylang/grunt-prompt) | Interactive prompt for your Grunt config using console checkboxes, text input with filtering, password fields. | [![grunt-prompt](https://img.shields.io/npm/dm/grunt-prompt.svg?style=flat-square)](https://www.npmjs.org/package/grunt-prompt) |
+| [`shortid`](https://github.com/dylang/shortid) | Amazingly short non-sequential url-friendly unique id generator. | [![shortid](https://img.shields.io/npm/dm/shortid.svg?style=flat-square)](https://www.npmjs.org/package/shortid) |
+| [`npm‑check`](https://github.com/dylang/npm-check) | Check for outdated, incorrect, and unused dependencies. | [![npm-check](https://img.shields.io/npm/dm/npm-check.svg?style=flat-square)](https://www.npmjs.org/package/npm-check) |
+| [`xml`](https://github.com/dylang/node-xml) | Fast and simple xml generator. Supports attributes, CDATA, etc. Includes tests and examples. | [![xml](https://img.shields.io/npm/dm/xml.svg?style=flat-square)](https://www.npmjs.org/package/xml) |
+| [`changelog`](https://github.com/dylang/changelog) | Command line tool (and Node module) that generates a changelog in color output, markdown, or json for modules in npmjs.org's registry as well as any public github.com repo. | [![changelog](https://img.shields.io/npm/dm/changelog.svg?style=flat-square)](https://www.npmjs.org/package/changelog) |
+| [`grunt‑attention`](https://github.com/dylang/grunt-attention) | Display attention-grabbing messages in the terminal | [![grunt-attention](https://img.shields.io/npm/dm/grunt-attention.svg?style=flat-square)](https://www.npmjs.org/package/grunt-attention) |
+| [`observatory`](https://github.com/dylang/observatory) | Beautiful UI for showing tasks running on the command line. | [![observatory](https://img.shields.io/npm/dm/observatory.svg?style=flat-square)](https://www.npmjs.org/package/observatory) |
+| [`anthology`](https://github.com/dylang/anthology) | Module information and stats for any @npmjs user | [![anthology](https://img.shields.io/npm/dm/anthology.svg?style=flat-square)](https://www.npmjs.org/package/anthology) |
+| [`grunt‑cat`](https://github.com/dylang/grunt-cat) | Echo a file to the terminal. Works with text, figlets, ascii art, and full-color ansi. | [![grunt-cat](https://img.shields.io/npm/dm/grunt-cat.svg?style=flat-square)](https://www.npmjs.org/package/grunt-cat) |
 
 _This list was generated using [anthology](https://github.com/dylang/anthology)._
 
@@ -223,5 +215,5 @@ Released under the [MIT license](https://tldrlegal.com/license/mit-license).
 Screenshots are [CC BY-SA](http://creativecommons.org/licenses/by-sa/4.0/) (Attribution-ShareAlike).
 
 ***
-_Generated using [grunt-readme](https://github.com/assemble/grunt-readme) with [grunt-templates-dylang](https://github.com/dylang/grunt-templates-dylang) on Tuesday, October 21, 2014._ [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/dylang/rss/trend.png)](https://bitdeli.com/free "Bitdeli Badge") [![Google Analytics](https://ga-beacon.appspot.com/UA-4820261-3/dylang/rss)](https://github.com/igrigorik/ga-beacon)
+_Generated using [grunt-readme](https://github.com/assemble/grunt-readme) with [grunt-templates-dylang](https://github.com/dylang/grunt-templates-dylang) on Monday, December 8, 2014._
 
