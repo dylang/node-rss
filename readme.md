@@ -65,7 +65,7 @@ feed.item(itemOptions);
  if the content should be presented as unread.
  * `lat` _optional_ **number** The latitude coordinate of the item.
  * `long` _optional_ **number** The longitude coordinate of the item.
-* `custom_elements` _optional_ **array** Put additional elements in the item (node-xml syntax)
+ * `custom_elements` _optional_ **array** Put additional elements in the item (node-xml syntax)
 
 ##### Feed XML
 
