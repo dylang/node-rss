@@ -41,7 +41,6 @@
   },
   "dependencies": {
     "mime": "^1.2.11",
-    "underscore": "^1.7.0",
     "xml": "^1.0.0"
   },
   "devDependencies": {
