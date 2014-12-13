@@ -38,18 +38,13 @@ var feed = new RSS(feedOptions);
  * `hub` _optional_ **PubSubHubbub hub url** Where is the PubSubHub hub located.
  * `custom_namespaces` _optional_ **object** Put additional namespaces in <rss> element (without 'xmlns:' prefix)
  * `custom_elements` _optional_ **array** Put additional elements in the feed (node-xml syntax)
+ * `no_cdata_fields` _optional_ **array** Field names that shouldn't be wrapped with CDATA. Default is to wrap
 
 #### Add items to a feed
-
 An item can be used for a blog entry, project update, log entry, etc.  Your RSS feed
 can have any number of items. Most feeds use 20 or fewer items.
 
-```js
-feed.item(itemOptions);
-```
-
 ##### itemOptions
-
  * `title` **string** Title of this particular item.
  * `description` **string** Content for the item.  Can contain html but link and image urls must be absolute path including hostname.
  * `url` **url string** Url to the item. This could be a blog entry.
@@ -67,7 +62,20 @@ feed.item(itemOptions);
  * `long` _optional_ **number** The longitude coordinate of the item.
  * `custom_elements` _optional_ **array** Put additional elements in the item (node-xml syntax)
 
-##### Feed XML
+##### Add single item
+```js
+feed.item(itemOptions);
+```
+##### Concatenate an array of items
+```js
+feed.concat_items(arrayOfItemOptions);
+```
+##### Replace items with a new array of items
+```js
+feed.replace_items(arrayOfItemOptions);
+```
+
+#### Feed XML
 
 ```js
 var xml = feed.xml(indent);
@@ -80,11 +88,12 @@ This returns the XML as a string.
 
 
 ### Example Usage
+(examples/simple.js)
 
 ```js
-var RSS = require('rss');
+var RSS = require('../lib/rss');
 
-/* lets create an rss feed */
+/* let's create an rss feed */
 var feed = new RSS({
     title: 'title',
     description: 'description',
@@ -99,6 +108,7 @@ var feed = new RSS({
     categories: ['Category 1','Category 2','Category 3'],
     pubDate: 'May 20, 2012 04:00:00 GMT',
     ttl: '60',
+    no_cdata_fields: ['title', 'category'],
     customNamespaces: {
       'itunes': 'http://www.itunes.com/dtds/podcast-1.0.dtd'
     },
@@ -139,7 +149,8 @@ feed.item({
     date: 'May 27, 2012', // any format that js Date can parse.
     lat: 33.417974, //optional latitude field for GeoRSS
     long: -111.933231, //optional longitude field for GeoRSS
-    enclosure: {url:'...', file:'path-to-file'}, // optional enclosure
+    enclosure: {url:'https://www.google.com/images/srpr/logo11w.png'},
+    // enclosure: {file:'path-to-file'}, // optional enclosure
     custom: [
       {'itunes:author': 'John Doe'},
       {'itunes:subtitle': 'A short primer on table spices'},
@@ -153,7 +164,52 @@ feed.item({
 });
 
 // cache the xml to send to clients
-var xml = feed.xml();
+var xml = feed.xml("     ");
+console.log(xml);
+```
+#### XML Output:
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#">
+     <channel>
+          <title>title</title>
+          <description><![CDATA[description]]></description>
+          <link>http://example.com</link>
+          <image>
+               <url>http://example.com/icon.png</url>
+               <title>title</title>
+               <link>http://example.com</link>
+          </image>
+          <generator>RSS for Node</generator>
+          <lastBuildDate>Sat, 13 Dec 2014 01:44:19 GMT</lastBuildDate>
+          <atom:link href="http://example.com/rss.xml" rel="self" type="application/rss+xml"/>
+          <pubDate>Sun, 20 May 2012 04:00:00 GMT</pubDate>
+          <copyright><![CDATA[2013 Dylan Greene]]></copyright>
+          <language><![CDATA[en]]></language>
+          <managingEditor><![CDATA[Dylan Greene]]></managingEditor>
+          <webMaster><![CDATA[Dylan Greene]]></webMaster>
+          <docs>http://example.com/rss/docs.html</docs>
+          <ttl>60</ttl>
+          <category>Category 1</category>
+          <category>Category 2</category>
+          <category>Category 3</category>
+          <item>
+               <title>item title</title>
+               <description><![CDATA[use this for the content. It can include html.]]></description>
+               <link>http://example.com/article4?this&amp;that</link>
+               <guid isPermaLink="false">1123</guid>
+               <category>Category 1</category>
+               <category>Category 2</category>
+               <category>Category 3</category>
+               <category>Category 4</category>
+               <dc:creator><![CDATA[Guest Author]]></dc:creator>
+               <pubDate>Sun, 27 May 2012 07:00:00 GMT</pubDate>
+               <geo:lat>33.417974</geo:lat>
+               <geo:long>-111.933231</geo:long>
+               <enclosure url="https://www.google.com/images/srpr/logo11w.png" length="0" type="image/png"/>
+          </item>
+     </channel>
+</rss>
 ```
 
 
