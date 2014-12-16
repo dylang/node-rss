@@ -493,7 +493,7 @@ describe('rss module', function(done) {
             author: 'Dylan Greene',
             feed_url: 'http://example.com/rss.xml',
             site_url: 'http://example.com',
-            no_encode_fields: ['title', 'author']
+            no_cdata_fields: ['title', 'author']
         });
 
         var expectedResult = '<?xml version="1.0" encoding="UTF-8"?>\n'+
@@ -650,4 +650,37 @@ describe('rss module', function(done) {
         done();
     });
 
+    it('should xml escape fields that are specified in no_cdata_fields', function(done) {
+        var feed = new RSS({
+                    title: '<b>title</b>', // This should be escaped
+                    description: 'description',
+                    generator: 'Example Generator',
+                    feed_url: 'http://example.com/rss.xml',
+                    site_url: 'http://example.com',
+                    image_url: 'http://example.com/icon.png',
+                    author: 'Dylan Greene',
+                    categories: ['Category 1','Category 2','Category 3'],
+                    pubDate: 'May 20, 2012 04:00:00 GMT',
+                    docs: 'http://example.com/rss/docs.html',
+                    copyright: '2013 Dylan Green',
+                    language: 'en',
+                    managingEditor: 'Dylan Green',
+                    webMaster: 'Dylan Green',
+                    ttl: '60',
+                    no_cdata_fields: ['title']
+                });
+
+        feed.item({
+                    title:  'This & That', // This should be escaped
+                    description: 'BOGUS ITEM - REPLACE ME',
+                    url: 'http://example.com/article1',
+                    date: 'May 24, 2012 04:00:00 GMT'
+                });
+
+        var expectedResult = '<?xml version="1.0" encoding="UTF-8"?>\n<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>&lt;b&gt;title&lt;/b&gt;</title><description><![CDATA[description]]></description><link>http://example.com</link><image><url>http://example.com/icon.png</url><title>&lt;b&gt;title&lt;/b&gt;</title><link>http://example.com</link></image><generator>Example Generator</generator><lastBuildDate>' + new Date().toUTCString() +'</lastBuildDate><atom:link href="http://example.com/rss.xml" rel="self" type="application/rss+xml"/><author><![CDATA[Dylan Greene]]></author><pubDate>Sun, 20 May 2012 04:00:00 GMT</pubDate><copyright><![CDATA[2013 Dylan Green]]></copyright><language><![CDATA[en]]></language><managingEditor><![CDATA[Dylan Green]]></managingEditor><webMaster><![CDATA[Dylan Green]]></webMaster><docs>http://example.com/rss/docs.html</docs><ttl>60</ttl><category><![CDATA[Category 1]]></category><category><![CDATA[Category 2]]></category><category><![CDATA[Category 3]]></category><item><title>This &amp; That</title><description><![CDATA[BOGUS ITEM - REPLACE ME]]></description><link>http://example.com/article1</link><guid isPermaLink="true">http://example.com/article1</guid><dc:creator><![CDATA[Dylan Greene]]></dc:creator><pubDate>Thu, 24 May 2012 04:00:00 GMT</pubDate></item></channel></rss>';
+        var result = feed.xml();
+
+        expect(result).to.equal(expectedResult);
+        done();
+    });
 });

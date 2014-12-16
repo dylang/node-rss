@@ -15,7 +15,7 @@ var feed = new RSS({
     categories: ['Category 1','Category 2','Category 3'],
     pubDate: 'May 20, 2012 04:00:00 GMT',
     ttl: '60',
-    no_encode_fields: ['title', 'category'],
+    no_cdata_fields: ['title', 'category'],
     customNamespaces: {
       'itunes': 'http://www.itunes.com/dtds/podcast-1.0.dtd'
     },

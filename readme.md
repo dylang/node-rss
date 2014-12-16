@@ -38,7 +38,7 @@ var feed = new RSS(feedOptions);
  * `hub` _optional_ **PubSubHubbub hub url** Where is the PubSubHub hub located.
  * `custom_namespaces` _optional_ **object** Put additional namespaces in <rss> element (without 'xmlns:' prefix)
  * `custom_elements` _optional_ **array** Put additional elements in the feed (node-xml syntax)
- * `no_encode_fields` _optional_ **array** Field names that shouldn't be wrapped with CDATA. Default is to wrap
+ * `no_cdata_fields` _optional_ **array** Field names that shouldn't be wrapped with CDATA tag. The data will be escaped for XML. Default is to wrap with CDATA. You should only use this to work around problematic XML clients.
 
 #### Add items to a feed
 An item can be used for a blog entry, project update, log entry, etc.  Your RSS feed
@@ -108,7 +108,7 @@ var feed = new RSS({
     categories: ['Category 1','Category 2','Category 3'],
     pubDate: 'May 20, 2012 04:00:00 GMT',
     ttl: '60',
-    no_encode_fields: ['title', 'category'],
+    no_cdata_fields: ['title', 'category'],
     customNamespaces: {
       'itunes': 'http://www.itunes.com/dtds/podcast-1.0.dtd'
     },
