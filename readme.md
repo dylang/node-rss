@@ -164,7 +164,7 @@ feed.item({
 });
 
 // cache the xml to send to clients
-var xml = feed.xml("     ");
+var xml = feed.xml("\t");
 console.log(xml);
 ```
 #### XML Output:

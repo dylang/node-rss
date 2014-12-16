@@ -15,7 +15,7 @@ var feed = new RSS({
     categories: ['Category 1','Category 2','Category 3'],
     pubDate: 'May 20, 2012 04:00:00 GMT',
     ttl: '60',
-    no_cdata_fields: ['title', 'category'],
+    no_encode_fields: ['title', 'category'],
     customNamespaces: {
       'itunes': 'http://www.itunes.com/dtds/podcast-1.0.dtd'
     },
@@ -47,7 +47,7 @@ var feed = new RSS({
 
 /* loop over data and add to feed */
 feed.item({
-    title:  'item title',
+    title:  'item title & fun',
     description: 'use this for the content. It can include html.',
     url: 'http://example.com/article4?this&that', // link to the item
     guid: '1123', // optional - defaults to url
@@ -71,6 +71,6 @@ feed.item({
 });
 
 // cache the xml to send to clients
-var xml = feed.xml("     ");
+var xml = feed.xml("\t");
 
 console.log(xml);

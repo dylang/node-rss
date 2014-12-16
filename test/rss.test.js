@@ -493,7 +493,7 @@ describe('rss module', function(done) {
             author: 'Dylan Greene',
             feed_url: 'http://example.com/rss.xml',
             site_url: 'http://example.com',
-            no_cdata_fields: ['title', 'author']
+            no_encode_fields: ['title', 'author']
         });
 
         var expectedResult = '<?xml version="1.0" encoding="UTF-8"?>\n'+
