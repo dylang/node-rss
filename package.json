@@ -15,7 +15,7 @@
   "main": "lib/index",
   "scripts": {
     "test": "tape test",
-    "lint": "jshint",
+    "lint": "grunt lint",
     "test:browser": "prova -b"
   },
   "homepage": "http://github.com/dylang/node-rss",
