@@ -1,4 +1,4 @@
-var RSS = require('../lib/rss');
+var RSS = require('../lib/index');
 
 /* let's create an rss feed */
 var feed = new RSS({
