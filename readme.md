@@ -71,13 +71,15 @@ feed.replace_items(arrayOfItemOptions);
 #### Feed XML
 
 ```js
-var xml = feed.xml(indent);
+var xml = feed.xml({indent: true});
 ```
 
 This returns the XML as a string.
 
-`indent` _optional_ **string** What to use as a tab. Defaults to no tabs (compressed).
- For example you can use `'\t'` for tab character, or `'  '` for two-space tabs.
+`indent` _optional_ **boolean or string** What to use as a tab. Defaults to no tabs (compressed).
+For example you can use `'\t'` for tab character, or `'  '` for two-space tabs. If you set it to
+`true` it will use four spaces.
+
 
 
 ### Example Usage
@@ -263,5 +265,5 @@ Released under the [MIT license](https://tldrlegal.com/license/mit-license).
 Screenshots are [CC BY-SA](http://creativecommons.org/licenses/by-sa/4.0/) (Attribution-ShareAlike).
 
 ***
-_Generated using [grunt-readme](https://github.com/assemble/grunt-readme) with [grunt-templates-dylang](https://github.com/dylang/grunt-templates-dylang) on Monday, December 8, 2014._
+_Generated using [grunt-readme](https://github.com/assemble/grunt-readme) with [grunt-templates-dylang](https://github.com/dylang/grunt-templates-dylang) on Friday, December 19, 2014._
 

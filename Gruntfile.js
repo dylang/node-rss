@@ -15,15 +15,6 @@ module.exports = function(grunt) {
     require('time-grunt')(grunt);
 
     grunt.initConfig({
-        mochaTest: {
-            notify: {
-                src: 'test/**/*.test.js',
-                options: {
-                    reporter: 'spec'
-                }
-            }
-        },
-
         jshint: {
             options: {
                 jshintrc: '.jshintrc'
@@ -31,25 +22,25 @@ module.exports = function(grunt) {
             all: [
                 'Gruntfile.js',
                 'lib/**/*.js',
-                'tests/**/*.js'
+                'test/**/*.js'
             ]
-        }
-
+        },
+        release: {}
     });
 
     require('load-grunt-tasks')(grunt);
 
-    grunt.registerTask('test', [
-        'jshint',
-        'mochaTest'
+    grunt.registerTask('lint', [
+        'jshint'
     ]);
 
     grunt.registerTask('default', [
-        'test'
+        'lint'
     ]);
 
     grunt.registerTask('pre-publish', [
-        'test',
+        'lint',
+        'repos',
         'readme'
     ]);
 };
