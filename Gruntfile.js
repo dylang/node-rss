@@ -24,8 +24,8 @@ module.exports = function(grunt) {
                 'lib/**/*.js',
                 'test/**/*.js'
             ]
-        }
-
+        },
+        release: {}
     });
 
     require('load-grunt-tasks')(grunt);
