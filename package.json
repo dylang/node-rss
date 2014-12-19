@@ -12,9 +12,11 @@
     "feed builder",
     "rss feed"
   ],
-  "main": "lib/rss.js",
+  "main": "lib/index",
   "scripts": {
-    "test": "grunt test"
+    "test": "tape test",
+    "lint": "jshint",
+    "test:browser": "prova -b"
   },
   "homepage": "http://github.com/dylang/node-rss",
   "author": {
@@ -39,22 +41,43 @@
   "bugs": {
     "url": "http://github.com/dylang/node-rss/issues"
   },
+  "testling": {
+    "files": "test/*.js",
+    "browsers": [
+      "ie/9..latest",
+      "chrome/latest",
+      "firefox/latest",
+      "safari/latest",
+      "opera/latest",
+      "iphone/latest",
+      "ipad/latest",
+      "android-browser/latest"
+    ]
+  },
   "dependencies": {
-    "mime": "^1.2.11",
+    "folderify": "^0.6.0",
+    "mime-types": "^2.0.3",
     "xml": "^1.0.0"
   },
   "devDependencies": {
-    "chai": "^1.9.1",
+    "folderify": "^0.6.0",
     "grunt": "^0.4.5",
     "grunt-contrib-jshint": "^0.10.0",
-    "grunt-mocha-test": "^0.12.1",
     "grunt-release": "^0.9.0",
     "grunt-templates-dylang": "^1.0.0",
+    "include-folder": "^0.7.0",
     "load-grunt-tasks": "^1.0.0",
-    "mocha": "^2.0.1",
+    "mockdate": "^1.0.0",
+    "prova": "^2.0.3",
     "q": "^1.0.0",
+    "tape": "^3.0.3",
     "time-grunt": "^1.0.0",
     "xml2js": "^0.4.1"
+  },
+  "browserify": {
+    "transform": [
+      "folderify"
+    ]
   },
   "licenses": "MIT"
 }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#">
+    <channel>
+        <title><![CDATA[title]]></title>
+        <description><![CDATA[description]]></description>
+        <link>http://example.com</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Wed, 10 Dec 2014 19:04:57 GMT</lastBuildDate>
+        <atom:link href="http://example.com/rss.xml" rel="self" type="application/rss+xml"/>
+        <author><![CDATA[Dylan Greene]]></author>
+        <item>
+            <title><![CDATA[item 1]]></title>
+            <description><![CDATA[description 1]]></description>
+            <link>http://example.com/article1</link>
+            <guid isPermaLink="true">http://example.com/article1</guid>
+            <dc:creator><![CDATA[Dylan Greene]]></dc:creator>
+            <pubDate>Thu, 24 May 2012 04:00:00 GMT</pubDate>
+            <geo:lat>12232</geo:lat>
+            <geo:long>13333.23323</geo:long>
+        </item>
+        <item>
+            <title><![CDATA[item 2]]></title>
+            <description><![CDATA[description 2]]></description>
+            <link>http://example.com/article1</link>
+            <guid isPermaLink="true">http://example.com/article1</guid>
+            <dc:creator><![CDATA[Dylan Greene]]></dc:creator>
+            <pubDate>Thu, 24 May 2012 04:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>

@@ -59,10 +59,11 @@ feed.item(itemOptions);
 #### Feed XML
 
 ```js
-var xml = feed.xml(indent);
+var xml = feed.xml({indent: true});
 ```
 
 This returns the XML as a string.
 
-`indent` _optional_ **string** What to use as a tab. Defaults to no tabs (compressed).
- For example you can use `'\t'` for tab character, or `'  '` for two-space tabs.
+`indent` _optional_ **boolean or string** What to use as a tab. Defaults to no tabs (compressed).
+For example you can use `'\t'` for tab character, or `'  '` for two-space tabs. If you set it to
+`true` it will use four spaces.
