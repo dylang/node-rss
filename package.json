@@ -32,7 +32,8 @@
     "Patrick Garman <contact@pmgarman.me>",
     "Fred Morstatter",
     "Eric Vantillard <eric.vantillard@evaxion.fr>",
-    "Jason Karns <jasonkarns>"
+    "Jason Karns <jasonkarns>",
+    "Kip Gebhardt <rv-kip>"
   ],
   "repository": {
     "type": "git",
@@ -60,7 +61,7 @@
     "xml": "^1.0.0"
   },
   "devDependencies": {
-    "folderify": "^0.6.0",
+    "mime": "^1.2.11",
     "grunt": "^0.4.5",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-release": "^0.9.0",
