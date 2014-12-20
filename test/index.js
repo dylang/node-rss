@@ -545,9 +545,9 @@ test('process item array passed to RSS object creation', function(t) {
     },
     item_array);
 
-    console.log(feed.xml({indent: true}));
+    // console.log(feed.xml({indent: true}));
 
-    t.equal(feed.xml({indent: true}), expectedOutput.escapeCdataFields);
+    t.equal(feed.xml({indent: true}), expectedOutput.processItemArrayOnObjCreation);
 });
 
 
