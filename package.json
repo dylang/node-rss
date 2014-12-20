@@ -58,7 +58,6 @@
   "dependencies": {
     "folderify": "^0.6.0",
     "mime-types": "^2.0.3",
-    "mime": "^1.2.11",    
     "xml": "^1.0.0"
   },
   "devDependencies": {
