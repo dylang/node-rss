@@ -2,6 +2,13 @@
 
 > RSS feed generator. Add RSS feeds to any project. Supports enclosures and GeoRSS.
 
+
+
+
+
+
+
+
 ### Usage
 
 #### Create a new feed
@@ -34,10 +41,16 @@ var feed = new RSS(feedOptions);
  * `no_cdata_fields` _optional_ **array** Field names that shouldn't be wrapped with CDATA tag. The data will be escaped for XML. Default is to wrap with CDATA. You should only use this to work around problematic XML clients.
 
 #### Add items to a feed
+
 An item can be used for a blog entry, project update, log entry, etc.  Your RSS feed
 can have any number of items. Most feeds use 20 or fewer items.
 
+```js
+feed.item(itemOptions);
+```
+
 ##### itemOptions
+
  * `title` **string** Title of this particular item.
  * `description` **string** Content for the item.  Can contain html but link and image urls must be absolute path including hostname.
  * `url` **url string** Url to the item. This could be a blog entry.
@@ -55,21 +68,20 @@ can have any number of items. Most feeds use 20 or fewer items.
  * `long` _optional_ **number** The longitude coordinate of the item.
  * `custom_elements` _optional_ **array** Put additional elements in the item (node-xml syntax)
 
-##### Add single item
+###### Add single item
 ```js
 feed.item(itemOptions);
 ```
-##### Concatenate an array of items
+###### Concatenate an array of items
 ```js
 feed.concat_items(arrayOfItemOptions);
 ```
-##### Replace items with a new array of items
+###### Replace items with a new array of items
 ```js
 feed.replace_items(arrayOfItemOptions);
 ```
 
-#### Feed XML
-
+##### Feed XML
 ```js
 var xml = feed.xml({indent: true});
 ```
@@ -84,11 +96,10 @@ For example you can use `'\t'` for tab character, or `'  '` for two-space tabs. 
 
 ### Example Usage
 (examples/simple.js)
-
 ```js
-var RSS = require('../lib/rss');
+var RSS = require('rss');
 
-/* let's create an rss feed */
+/* lets create an rss feed */
 var feed = new RSS({
     title: 'title',
     description: 'description',
@@ -103,11 +114,10 @@ var feed = new RSS({
     categories: ['Category 1','Category 2','Category 3'],
     pubDate: 'May 20, 2012 04:00:00 GMT',
     ttl: '60',
-    no_cdata_fields: ['title', 'category'],
-    custom_namespaces: {
+    customNamespaces: {
       'itunes': 'http://www.itunes.com/dtds/podcast-1.0.dtd'
     },
-    custom_elements: [
+    custom: [
       {'itunes:subtitle': 'A show about everything'},
       {'itunes:author': 'John Doe'},
       {'itunes:summary': 'All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our podcast in the Podcasts app or in the iTunes Store'},
@@ -133,6 +143,7 @@ var feed = new RSS({
     ]
 });
 
+/* loop over data and add to feed */
 feed.item({
     title:  'item title',
     description: 'use this for the content. It can include html.',
@@ -143,9 +154,8 @@ feed.item({
     date: 'May 27, 2012', // any format that js Date can parse.
     lat: 33.417974, //optional latitude field for GeoRSS
     long: -111.933231, //optional longitude field for GeoRSS
-    enclosure: {url:'https://www.google.com/images/srpr/logo11w.png'},
-    // enclosure: {file:'path-to-file'}, // optional enclosure
-    custom_elements: [
+    enclosure: {url:'...', file:'path-to-file'}, // optional enclosure
+    custom: [
       {'itunes:author': 'John Doe'},
       {'itunes:subtitle': 'A short primer on table spices'},
       {'itunes:image': {
@@ -158,52 +168,7 @@ feed.item({
 });
 
 // cache the xml to send to clients
-var xml = feed.xml("\t");
-console.log(xml);
-```
-#### XML Output:
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#">
-     <channel>
-          <title>title</title>
-          <description><![CDATA[description]]></description>
-          <link>http://example.com</link>
-          <image>
-               <url>http://example.com/icon.png</url>
-               <title>title</title>
-               <link>http://example.com</link>
-          </image>
-          <generator>RSS for Node</generator>
-          <lastBuildDate>Sat, 13 Dec 2014 01:44:19 GMT</lastBuildDate>
-          <atom:link href="http://example.com/rss.xml" rel="self" type="application/rss+xml"/>
-          <pubDate>Sun, 20 May 2012 04:00:00 GMT</pubDate>
-          <copyright><![CDATA[2013 Dylan Greene]]></copyright>
-          <language><![CDATA[en]]></language>
-          <managingEditor><![CDATA[Dylan Greene]]></managingEditor>
-          <webMaster><![CDATA[Dylan Greene]]></webMaster>
-          <docs>http://example.com/rss/docs.html</docs>
-          <ttl>60</ttl>
-          <category>Category 1</category>
-          <category>Category 2</category>
-          <category>Category 3</category>
-          <item>
-               <title>item title</title>
-               <description><![CDATA[use this for the content. It can include html.]]></description>
-               <link>http://example.com/article4?this&amp;that</link>
-               <guid isPermaLink="false">1123</guid>
-               <category>Category 1</category>
-               <category>Category 2</category>
-               <category>Category 3</category>
-               <category>Category 4</category>
-               <dc:creator><![CDATA[Guest Author]]></dc:creator>
-               <pubDate>Sun, 27 May 2012 07:00:00 GMT</pubDate>
-               <geo:lat>33.417974</geo:lat>
-               <geo:long>-111.933231</geo:long>
-               <enclosure url="https://www.google.com/images/srpr/logo11w.png" length="0" type="image/png"/>
-          </item>
-     </channel>
-</rss>
+var xml = feed.xml();
 ```
 
 
