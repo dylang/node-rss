@@ -1,9 +1,6 @@
-## Example Usage
-(examples/simple.js)
-```js
-var RSS = require('rss');
+var RSS = require('../lib/index');
 
-/* lets create an rss feed */
+/* let's create an rss feed */
 var feed = new RSS({
     title: 'title',
     description: 'description',
@@ -18,10 +15,11 @@ var feed = new RSS({
     categories: ['Category 1','Category 2','Category 3'],
     pubDate: 'May 20, 2012 04:00:00 GMT',
     ttl: '60',
+    no_cdata_fields: ['title', 'category'],
     customNamespaces: {
       'itunes': 'http://www.itunes.com/dtds/podcast-1.0.dtd'
     },
-    custom: [
+    custom_elements: [
       {'itunes:subtitle': 'A show about everything'},
       {'itunes:author': 'John Doe'},
       {'itunes:summary': 'All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our podcast in the Podcasts app or in the iTunes Store'},
@@ -47,19 +45,20 @@ var feed = new RSS({
     ]
 });
 
-/* loop over data and add to feed */
+// Add an item/article too the feed
 feed.item({
-    title:  'item title',
-    description: 'use this for the content. It can include html.',
+    title:  'Item Title & Fun',
+    description: 'Use this for the content. It can include html.',
     url: 'http://example.com/article4?this&that', // link to the item
     guid: '1123', // optional - defaults to url
-    categories: ['Category 1','Category 2','Category 3','Category 4'], // optional - array of item categories
+    categories: ['Category 1','Category 2'], // optional - array of item categories
     author: 'Guest Author', // optional - defaults to feed author property
     date: 'May 27, 2012', // any format that js Date can parse.
     lat: 33.417974, //optional latitude field for GeoRSS
     long: -111.933231, //optional longitude field for GeoRSS
-    enclosure: {url:'...', file:'path-to-file'}, // optional enclosure
-    custom: [
+    enclosure: { url: 'https://www.google.com/images/srpr/logo11w.png' },
+    // enclosure: {file:'path-to-file'}, // enclosure from file
+    custom_elements: [
       {'itunes:author': 'John Doe'},
       {'itunes:subtitle': 'A short primer on table spices'},
       {'itunes:image': {
@@ -71,6 +70,6 @@ feed.item({
     ]
 });
 
-// cache the xml to send to clients
-var xml = feed.xml();
-```
+// generate xml with default indent (4 sp)
+var xml = feed.xml({indent: true});
+console.log(xml);
