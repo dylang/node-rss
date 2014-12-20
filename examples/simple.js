@@ -45,19 +45,19 @@ var feed = new RSS({
     ]
 });
 
-/* loop over data and add to feed */
+// Add an item/article too the feed
 feed.item({
-    title:  'item title & fun',
-    description: 'use this for the content. It can include html.',
+    title:  'Item Title & Fun',
+    description: 'Use this for the content. It can include html.',
     url: 'http://example.com/article4?this&that', // link to the item
     guid: '1123', // optional - defaults to url
-    categories: ['Category 1','Category 2','Category 3','Category 4'], // optional - array of item categories
+    categories: ['Category 1','Category 2'], // optional - array of item categories
     author: 'Guest Author', // optional - defaults to feed author property
     date: 'May 27, 2012', // any format that js Date can parse.
     lat: 33.417974, //optional latitude field for GeoRSS
     long: -111.933231, //optional longitude field for GeoRSS
-    enclosure: {url:'https://www.google.com/images/srpr/logo11w.png'},
-    // enclosure: {file:'path-to-file'}, // optional enclosure
+    enclosure: { url: 'https://www.google.com/images/srpr/logo11w.png' },
+    // enclosure: {file:'path-to-file'}, // enclosure from file
     custom_elements: [
       {'itunes:author': 'John Doe'},
       {'itunes:subtitle': 'A short primer on table spices'},
@@ -70,7 +70,6 @@ feed.item({
     ]
 });
 
-// cache the xml to send to clients
-var xml = feed.xml("\t");
-
+// generate xml with default indent (4 sp)
+var xml = feed.xml({indent: true});
 console.log(xml);
