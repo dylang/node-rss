@@ -58,10 +58,10 @@
   "dependencies": {
     "folderify": "^0.6.0",
     "mime-types": "^2.0.3",
+    "mime": "^1.2.11",    
     "xml": "^1.0.0"
   },
   "devDependencies": {
-    "mime": "^1.2.11",
     "grunt": "^0.4.5",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-release": "^0.9.0",
