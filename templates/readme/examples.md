@@ -7,9 +7,9 @@ var RSS = require('rss');
 var feed = new RSS({
     title: 'title',
     description: 'description',
-    feed_url: 'http://example.com/rss.xml',
-    site_url: 'http://example.com',
-    image_url: 'http://example.com/icon.png',
+    feedUrl: 'http://example.com/rss.xml',
+    siteUrl: 'http://example.com',
+    imageUrl: 'http://example.com/icon.png',
     docs: 'http://example.com/rss/docs.html',
     managingEditor: 'Dylan Greene',
     webMaster: 'Dylan Greene',

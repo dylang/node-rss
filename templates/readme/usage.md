@@ -13,9 +13,9 @@ var feed = new RSS(feedOptions);
  * `title` **string** Title of your site or feed
  * `description` _optional_ **string** A short description of the feed.
  * `generator` _optional_  **string** Feed generator.
- * `feed_url` **url string** Url to the rss feed.
- * `site_url` **url string** Url to the site that the feed is for.
- * `image_url` _optional_  **url string* Small image for feed readers to use.
+ * `feedUrl` **url string** Url to the rss feed.
+ * `siteUrl` **url string** Url to the site that the feed is for.
+ * `imageUrl` _optional_  **url string* Small image for feed readers to use.
  * `docs` _optional_ **url string** Url to documentation on this feed.
  * `managingEditor` _optional_ **string** Who manages content in this feed.
  * `webMaster` _optional_ **string** Who manages feed availability and technical support.
@@ -25,8 +25,8 @@ var feed = new RSS(feedOptions);
  * `pubDate` _optional_ **Date object or date string** The publication date for content in the feed
  * `ttl` _optional_ **integer** Number of minutes feed can be cached before refreshing from source.
  * `hub` _optional_ **PubSubHubbub hub url** Where is the PubSubHub hub located.
- * `custom_namespaces` _optional_ **object** Put additional namespaces in <rss> element (without 'xmlns:' prefix)
- * `custom_elements` _optional_ **array** Put additional elements in the feed (node-xml syntax)
+ * `customNamespaces` _optional_ **object** Put additional namespaces in <rss> element (without 'xmlns:' prefix)
+ * `customElements` _optional_ **array** Put additional elements in the feed (node-xml syntax)
 
 ### Add items to a feed
 
@@ -54,7 +54,7 @@ feed.item(itemOptions);
  if the content should be presented as unread.
  * `lat` _optional_ **number** The latitude coordinate of the item.
  * `long` _optional_ **number** The longitude coordinate of the item.
- * `custom_elements` _optional_ **array** Put additional elements in the item (node-xml syntax)
+ * `customElements` _optional_ **array** Put additional elements in the item (node-xml syntax)
 
 #### Feed XML
 

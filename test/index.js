@@ -26,9 +26,9 @@ test('indentation', function(t) {
                 title: 'title',
                 description: 'description',
                 generator: 'Example Generator',
-                feed_url: 'http://example.com/rss.xml',
-                site_url: 'http://example.com',
-                image_url: 'http://example.com/icon.png',
+                feedUrl: 'http://example.com/rss.xml',
+                siteUrl: 'http://example.com',
+                imageUrl: 'http://example.com/icon.png',
                 author: 'Dylan Greene',
                 categories: ['Category 1','Category 2','Category 3'],
                 pubDate: 'May 20, 2012 04:00:00 GMT',
@@ -101,8 +101,8 @@ test('enclosure', function(t) {
     var feed = new RSS({
         title: 'title',
         description: 'description',
-        feed_url: 'http://example.com/rss.xml',
-        site_url: 'http://example.com',
+        feedUrl: 'http://example.com/rss.xml',
+        siteUrl: 'http://example.com',
         author: 'Dylan Greene'
     });
 
@@ -143,8 +143,8 @@ test('geoRSS', function(t) {
     var feed = new RSS({
         title: 'title',
         description: 'description',
-        feed_url: 'http://example.com/rss.xml',
-        site_url: 'http://example.com',
+        feedUrl: 'http://example.com/rss.xml',
+        siteUrl: 'http://example.com',
         author: 'Dylan Greene'
     });
 
@@ -173,8 +173,8 @@ test('PubSubHubbub hub', function(t) {
     var feed = new RSS({
         title: 'title',
         description: 'description',
-        feed_url: 'http://example.com/rss.xml',
-        site_url: 'http://example.com',
+        feedUrl: 'http://example.com/rss.xml',
+        siteUrl: 'http://example.com',
         hub: 'http://example.com/hub'
     });
 
@@ -188,13 +188,13 @@ test('custom elements', function(t) {
     var feed = new RSS({
                 title: 'title',
                 description: 'description',
-                feed_url: 'http://example.com/rss.xml',
-                site_url: 'http://example.com',
+                feedUrl: 'http://example.com/rss.xml',
+                siteUrl: 'http://example.com',
                 author: 'Dylan Greene',
                 pubDate: 'May 20, 2012 04:00:00 GMT',
                 language: 'en',
                 ttl: '60',
-                custom_elements: [
+                customElements: [
                   {'itunes:subtitle': 'A show about everything'},
                   {'itunes:author': 'John Doe'},
                   {'itunes:summary': 'All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our podcast in the Podcasts app or in the iTunes Store'},
@@ -225,7 +225,7 @@ test('custom elements', function(t) {
         description: 'description 1',
         url: 'http://example.com/article1',
         date: 'May 24, 2012 04:00:00 GMT',
-        custom_elements: [
+        customElements: [
           {'itunes:author': 'John Doe'},
           {'itunes:subtitle': 'A short primer on table spices'},
           {'itunes:image': {
@@ -246,16 +246,16 @@ test('custom namespaces', function(t) {
     var feed = new RSS({
                 title: 'title',
                 description: 'description',
-                feed_url: 'http://example.com/rss.xml',
-                site_url: 'http://example.com',
+                feedUrl: 'http://example.com/rss.xml',
+                siteUrl: 'http://example.com',
                 author: 'Dylan Greene',
                 pubDate: 'May 20, 2012 04:00:00 GMT',
                 language: 'en',
                 ttl: '60',
-                custom_namespaces: {
+                customNamespaces: {
                   'itunes': 'http://www.itunes.com/dtds/podcast-1.0.dtd'
                 },
-                custom_elements: [
+                customElements: [
                   {'itunes:subtitle': 'A show about everything'},
                   {'itunes:author': 'John Doe'},
                   {'itunes:summary': 'All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our podcast in the Podcasts app or in the iTunes Store'},
@@ -286,7 +286,7 @@ test('custom namespaces', function(t) {
         description: 'description 1',
         url: 'http://example.com/article1',
         date: 'May 24, 2012 04:00:00 GMT',
-        custom_elements: [
+        customElements: [
           {'itunes:author': 'John Doe'},
           {'itunes:subtitle': 'A short primer on table spices'},
           {'itunes:image': {
