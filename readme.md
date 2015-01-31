@@ -101,10 +101,10 @@ var feed = new RSS({
     categories: ['Category 1','Category 2','Category 3'],
     pubDate: 'May 20, 2012 04:00:00 GMT',
     ttl: '60',
-    customNamespaces: {
+    custom_namespaces: {
       'itunes': 'http://www.itunes.com/dtds/podcast-1.0.dtd'
     },
-    custom: [
+    custom_elements: [
       {'itunes:subtitle': 'A show about everything'},
       {'itunes:author': 'John Doe'},
       {'itunes:summary': 'All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our podcast in the Podcasts app or in the iTunes Store'},
@@ -142,7 +142,7 @@ feed.item({
     lat: 33.417974, //optional latitude field for GeoRSS
     long: -111.933231, //optional longitude field for GeoRSS
     enclosure: {url:'...', file:'path-to-file'}, // optional enclosure
-    custom: [
+    custom_elements: [
       {'itunes:author': 'John Doe'},
       {'itunes:subtitle': 'A short primer on table spices'},
       {'itunes:image': {
