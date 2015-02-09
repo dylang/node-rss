@@ -68,11 +68,20 @@ feed.item(itemOptions);
  * `custom_elements` _optional_ **array** Put additional elements in the item (node-xml syntax)
  * `enclosure` _optional_ **object** An enclosure object
     ```js
-    /* enclosure takes url or file key for the enclosure object */
+    /* enclosure takes url or file key for the enclosure object
+
+      url:  _required_ url to file object (or file)
+      file: _required_ path to binary file (or url)
+      size: _optional_ size of the file
+      type: _optional_ if not provided the mimetype will be guessed
+                       based on the extension of the file or url,
+                       passing type to the enclosure will override the guessed type
+    */
+
     {
-      'url'    : 'http://www.example.com/path/to/image', // url or path to binary, keys are url or file
-      'length' : 1668, // the size of the file // optional
-      'type'   : 'image/jpeg' // optional, if not provided the mimetype will be guessed based on the extension of the file or url, passing type to the enclosure will override the guessed type
+      'url'  : 'http://www.example.com/path/to/image',
+      'size' : 1668, //
+      'type' : 'image/jpeg'
     }
 
     ```
