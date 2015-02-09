@@ -137,6 +137,43 @@ test('enclosure', function(t) {
     t.equal(feed.xml({indent: true}), expectedOutput.enclosures);
 });
 
+test('enclosure_mimetype_override', function(t) {
+    //if (typeof window) return;
+
+    t.plan(1);
+
+    var feed = new RSS({
+        title: 'title',
+        description: 'description',
+        feed_url: 'http://example.com/rss.xml',
+        site_url: 'http://example.com',
+        author: 'Dylan Greene'
+    });
+
+
+    feed.item({
+        title:  'item 1',
+        description: 'description 1',
+        url: 'http://example.com/article1',
+        date: 'May 24, 2012 04:00:00 GMT',
+        enclosure : {url: '/media/some-file-without-extension', type: 'custom-video/x-flv'}
+    });
+
+    feed.item({
+        title:  'item 2',
+        description: 'description 2',
+        url: 'http://example.com/article1',
+        date: 'May 24, 2012 04:00:00 GMT',
+        enclosure : {
+            url: '/media/image.png',
+            file: __dirname + '/image.png',
+            size: 16650, // this is optional
+            type: 'image/jpeg' // we set this just to prove that the override works
+        }
+    });
+
+    t.equal(feed.xml({indent: true}), expectedOutput.enclosure_mimetype_override);
+});
 
 test('geoRSS', function(t) {
     t.plan(1);

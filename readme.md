@@ -66,7 +66,16 @@ feed.item(itemOptions);
  * `lat` _optional_ **number** The latitude coordinate of the item.
  * `long` _optional_ **number** The longitude coordinate of the item.
  * `custom_elements` _optional_ **array** Put additional elements in the item (node-xml syntax)
+ * `enclosure` _optional_ **object** An enclosure object
+    ```js
+    /* enclosure takes url or file key for the enclosure object */
+    {
+      'url'    : 'http://www.example.com/path/to/image', // url or path to binary, keys are url or file
+      'length' : 1668, // the size of the file // optional
+      'type'   : 'image/jpeg' // optional, if not provided the mimetype will be guessed based on the extension of the file or url, passing type to the enclosure will override the guessed type
+    }
 
+    ```
 ##### Feed XML
 
 ```js
