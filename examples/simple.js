@@ -1,6 +1,9 @@
+
+// A simple RSS feed generation example
+
 var RSS = require('../lib/index');
 
-/* let's create an rss feed */
+// Create RSS Feed Meta
 var feed = new RSS({
     title: 'title',
     description: 'description',
@@ -45,7 +48,7 @@ var feed = new RSS({
     ]
 });
 
-// Add an item/article too the feed
+// Add an item/article to the feed
 feed.item({
     title:  'Item Title & Fun',
     description: 'Use this for the content. It can include html.',

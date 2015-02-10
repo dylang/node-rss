@@ -74,11 +74,11 @@ feed.item(itemOptions);
 ```
 ###### Concatenate an array of items
 ```js
-feed.concat_items(arrayOfItemOptions);
+feed.addItems(arrayOfItemOptions);
 ```
-###### Replace items with a new array of items
+###### Delete all items
 ```js
-feed.replace_items(arrayOfItemOptions);
+feed.removeAllItems();
 ```
 
 ##### Feed XML

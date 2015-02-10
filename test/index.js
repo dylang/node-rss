@@ -387,7 +387,7 @@ test('concatenate array of items to existing items', function(t) {
         }
     ];
 
-    feed.concat_items(additional_items);
+    feed.addItems(additional_items);
 
     t.equal(feed.xml({indent: true}), expectedOutput.concatenateItems);
 });
@@ -455,8 +455,8 @@ test('replace items with array of new items', function(t) {
             date: 'May 28, 2012 04:00:00 GMT'
         }
     ];
-
-    feed.replace_items(new_items);
+    feed.removeAllItems();
+    feed.addItems(new_items);
     t.equal(feed.xml({indent: true}), expectedOutput.replacedItems);
 });
 
@@ -548,6 +548,64 @@ test('process item array passed to RSS object creation', function(t) {
     // console.log(feed.xml({indent: true}));
 
     t.equal(feed.xml({indent: true}), expectedOutput.processItemArrayOnObjCreation);
+});
+
+test('remove all items', function(t) {
+    t.plan(1);
+
+    var item_array = [
+        {
+            title:  'item 2',
+            description: 'description 2',
+            url: 'http://example.com/article2',
+            date: 'May 25, 2012 04:00:00 GMT'
+        },
+        {
+            title:  'item 3',
+            description: 'description 3',
+            url: 'http://example.com/article3',
+            guid: 'item3',
+            date: 'May 26, 2012 04:00:00 GMT'
+        },
+        {
+            title:  'item 4 & html test with <strong>',
+            description: 'description 4 uses some <strong>html</strong>',
+            url: 'http://example.com/article4?this&that',
+            author: 'Guest Author',
+            date: 'May 27, 2012 04:00:00 GMT'
+        },
+        {
+            title:  'item 5 & test for categories',
+            description: 'description 5',
+            url: 'http://example.com/article5',
+            categories: ['Category 1','Category 2','Category 3','Category 4'],
+            author: 'Guest Author',
+            date: 'May 28, 2012 04:00:00 GMT'
+        }
+    ];
+
+    var feed = new RSS({
+        title: '<b>title</b>', // This should be escaped
+        description: 'description',
+        generator: 'Example Generator',
+        feed_url: 'http://example.com/rss.xml',
+        site_url: 'http://example.com',
+        image_url: 'http://example.com/icon.png',
+        author: 'Dylan Greene',
+        categories: ['Category 1','Category 2','Category 3'],
+        pubDate: 'May 20, 2012 04:00:00 GMT',
+        docs: 'http://example.com/rss/docs.html',
+        copyright: '2013 Dylan Green',
+        language: 'en',
+        managingEditor: 'Dylan Green',
+        webMaster: 'Dylan Green',
+        ttl: '60',
+        no_cdata_fields: ['title']
+    },
+    item_array);
+
+    feed.removeAllItems();
+    t.equal(feed.xml({indent: true}), expectedOutput.removedAllItems);
 });
 
 
