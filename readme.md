@@ -1,4 +1,4 @@
-## rss  [![Build Status](http://img.shields.io/travis/dylang/rss.svg?style=flat-square)](https://travis-ci.org/dylang/rss) [![rss](http://img.shields.io/npm/dm/rss.svg?style=flat-square)](https://www.npmjs.org/package/rss)
+## rss  [![Build Status](http://img.shields.io/travis/dylang/node-rss.svg)](https://travis-ci.org/dylang/node-rss) [![rss](http://img.shields.io/npm/dm/rss.svg)](https://www.npmjs.org/package/rss)
 
 > RSS feed generator. Add RSS feeds to any project. Supports enclosures and GeoRSS.
 
@@ -114,10 +114,10 @@ var feed = new RSS({
     categories: ['Category 1','Category 2','Category 3'],
     pubDate: 'May 20, 2012 04:00:00 GMT',
     ttl: '60',
-    customNamespaces: {
+    custom_namespaces: {
       'itunes': 'http://www.itunes.com/dtds/podcast-1.0.dtd'
     },
-    custom: [
+    custom_elements: [
       {'itunes:subtitle': 'A show about everything'},
       {'itunes:author': 'John Doe'},
       {'itunes:summary': 'All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our podcast in the Podcasts app or in the iTunes Store'},
@@ -155,7 +155,7 @@ feed.item({
     lat: 33.417974, //optional latitude field for GeoRSS
     long: -111.933231, //optional longitude field for GeoRSS
     enclosure: {url:'...', file:'path-to-file'}, // optional enclosure
-    custom: [
+    custom_elements: [
       {'itunes:author': 'John Doe'},
       {'itunes:subtitle': 'A short primer on table spices'},
       {'itunes:image': {
@@ -199,10 +199,10 @@ are included.
 
 
 
-### About the Author [![@dylang](https://img.shields.io/badge/github-dylang-green.svg?style=flat-square)](https://github.com/dylang) [![@dylang](https://img.shields.io/badge/twitter-dylang-blue.svg?style=flat-square)](https://twitter.com/dylang)
+### About the Author
 
-Hi! Thanks for checking `rss`! My name is **Dylan Greene**. When not overwhelmed with my two young kids I enjoy contributing
-to the open source community. I'm also a tech lead at [Opower](http://opower.com).
+Hi! Thanks for checking out this project! My name is **Dylan Greene**. When not overwhelmed with my two young kids I enjoy contributing
+to the open source community. I'm also a tech lead at [Opower](http://opower.com). [![@dylang](https://img.shields.io/badge/github-dylang-green.svg)](https://github.com/dylang) [![@dylang](https://img.shields.io/badge/twitter-dylang-blue.svg)](https://twitter.com/dylang)
 
 Here's some of my other Node projects:
 
@@ -223,12 +223,13 @@ _This list was generated using [anthology](https://github.com/dylang/anthology).
 
 
 ### License
-Copyright (c) 2014 Dylan Greene, contributors.
+Copyright (c) 2015 Dylan Greene, contributors.
 
 Released under the [MIT license](https://tldrlegal.com/license/mit-license).
 
 Screenshots are [CC BY-SA](http://creativecommons.org/licenses/by-sa/4.0/) (Attribution-ShareAlike).
 
 ***
-_Generated using [grunt-readme](https://github.com/assemble/grunt-readme) with [grunt-templates-dylang](https://github.com/dylang/grunt-templates-dylang) on Friday, December 19, 2014._
+_Generated using [grunt-readme](https://github.com/assemble/grunt-readme) with [grunt-templates-dylang](https://github.com/dylang/grunt-templates-dylang) on Sunday, February 8, 2015._
+_To make changes to this document look in `/templates/readme/`
 
