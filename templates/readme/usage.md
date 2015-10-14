@@ -15,7 +15,7 @@ var feed = new RSS(feedOptions);
  * `generator` _optional_  **string** Feed generator.
  * `feed_url` **url string** Url to the rss feed.
  * `site_url` **url string** Url to the site that the feed is for.
- * `image_url` _optional_  **url string* Small image for feed readers to use.
+ * `image_url` _optional_  **url string** Small image for feed readers to use.
  * `docs` _optional_ **url string** Url to documentation on this feed.
  * `managingEditor` _optional_ **string** Who manages content in this feed.
  * `webMaster` _optional_ **string** Who manages feed availability and technical support.
