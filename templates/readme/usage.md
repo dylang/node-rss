@@ -15,7 +15,7 @@ var feed = new RSS(feedOptions);
  * `generator` _optional_  **string** Feed generator.
  * `feed_url` **url string** Url to the rss feed.
  * `site_url` **url string** Url to the site that the feed is for.
- * `image_url` _optional_  **url string* Small image for feed readers to use.
+ * `image_url` _optional_  **url string** Small image for feed readers to use.
  * `docs` _optional_ **url string** Url to documentation on this feed.
  * `managingEditor` _optional_ **string** Who manages content in this feed.
  * `webMaster` _optional_ **string** Who manages feed availability and technical support.
@@ -56,7 +56,25 @@ feed.item(itemOptions);
  * `lat` _optional_ **number** The latitude coordinate of the item.
  * `long` _optional_ **number** The longitude coordinate of the item.
  * `custom_elements` _optional_ **array** Put additional elements in the item (node-xml syntax)
+ * `enclosure` _optional_ **object** An enclosure object
+    ```js
+    /* enclosure takes url or file key for the enclosure object
 
+      url:  _required_ url to file object (or file)
+      file: _required_ path to binary file (or url)
+      size: _optional_ size of the file
+      type: _optional_ if not provided the mimetype will be guessed
+                       based on the extension of the file or url,
+                       passing type to the enclosure will override the guessed type
+    */
+
+    {
+      'url'  : 'http://www.example.com/path/to/image',
+      'size' : 1668, //
+      'type' : 'image/jpeg'
+    }
+
+    ```
 ##### Add single item
 ```js
 feed.item(itemOptions);
@@ -69,7 +87,6 @@ feed.concat_items(arrayOfItemOptions);
 ```js
 feed.replace_items(arrayOfItemOptions);
 ```
-
 #### Feed XML
 ```js
 var xml = feed.xml({indent: true});
