@@ -4,10 +4,13 @@ matrix:
   include:
     - node_js: '0.10'
       before_install: npm -g i npm@2
+      before_script: npm -g i grunt-cli
     - node_js: '0.12'
       before_install: npm -g i npm@2
+      before_script: npm -g i grunt-cli
     - node_js: '4'
       before_install: npm -g i npm@2
+      before_script: npm -g i grunt-cli
     - node_js: '4'
       before_install: npm -g i npm@3
-
+      before_script: npm -g i grunt-cli

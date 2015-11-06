@@ -55,7 +55,6 @@
     ]
   },
   "dependencies": {
-    "grunt-cli": "^0.1.13",
     "mime-types": "^2.1.7",
     "xml": "^1.0.0"
   },
