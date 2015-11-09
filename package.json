@@ -55,13 +55,13 @@
     ]
   },
   "dependencies": {
-    "grunt-cli": "^0.1.13",
     "mime-types": "^2.1.7",
     "xml": "^1.0.0"
   },
   "devDependencies": {
     "folderify": "^1.1.0",
     "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
     "grunt-contrib-jshint": "^0.11.3",
     "grunt-release": "^0.13.0",
     "grunt-templates-dylang": "^1.0.10",
