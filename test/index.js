@@ -218,6 +218,18 @@ test('PubSubHubbub hub', function(t) {
     t.equal(feed.xml({indent: true}), expectedOutput.pubSubHubbub);
 });
 
+test('Timezone and format override', function(t) {
+    t.plan(1);
+
+    var feed = new RSS({
+        title: 'title',
+        description: 'description',
+        feed_url: 'http://example.com/rss.xml',
+        site_url: 'http://example.com'
+    });
+
+    t.equal(feed.xml({indent: true, timeZone: 'Asia/Tokyo', dateFormat: 'ddd, DD MMM YYYY HH:mm:ss ZZ'}), expectedOutput.timeZoneAndFormat);
+});
 
 test('custom elements', function(t) {
     t.plan(1);

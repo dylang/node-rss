@@ -57,6 +57,7 @@
   },
   "dependencies": {
     "mime-types": "^2.1.7",
+    "moment-timezone": "^0.5.5",
     "xml": "^1.0.0"
   },
   "devDependencies": {
