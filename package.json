@@ -1,5 +1,5 @@
 {
-  "name": "rss",
+  "name": "jpackard-rss",
   "version": "1.2.1",
   "description": "RSS feed generator. Add RSS feeds to any project. Supports enclosures and GeoRSS.",
   "keywords": [
