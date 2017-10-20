@@ -1,6 +1,6 @@
 {
-  "name": "rss",
-  "version": "1.2.2",
+  "name": "rss-generator",
+  "version": "0.0.1",
   "description": "RSS feed generator. Add RSS feeds to any project. Supports enclosures and GeoRSS.",
   "keywords": [
     "rss",
@@ -18,29 +18,17 @@
     "lint": "grunt lint",
     "test:browser": "prova -b"
   },
-  "homepage": "http://github.com/dylang/node-rss",
+  "homepage": "http://github.com/phi-jp/rss-generator",
   "author": {
-    "name": "Dylan Greene",
-    "email": "dylang@gmail.com"
+    "name": "phi",
+    "email": "phi1618jp@gmail.com"
   },
-  "contributors": [
-    "Dylan Greene <dylang@gmail.com>",
-    "Xavier Damman <xdamman@gmail.com>",
-    "Michael R. Lange",
-    "Victor Jonsson",
-    "Danny Graham",
-    "Patrick Garman <contact@pmgarman.me>",
-    "Fred Morstatter",
-    "Eric Vantillard <eric.vantillard@evaxion.fr>",
-    "Jason Karns <jasonkarns>",
-    "Hannah Wolfe <github.erisds@gmail.com>"
-  ],
   "repository": {
     "type": "git",
-    "url": "http://github.com/dylang/node-rss.git"
+    "url": "http://github.com/phi-jp/rss-generator.git"
   },
   "bugs": {
-    "url": "http://github.com/dylang/node-rss/issues"
+    "url": "http://github.com/phi-jp/rss-generator/issues"
   },
   "testling": {
     "files": "test/*.js",
@@ -57,6 +45,7 @@
   },
   "dependencies": {
     "mime-types": "2.1.13",
+    "moment": "^2.19.1",
     "xml": "1.0.1"
   },
   "devDependencies": {
