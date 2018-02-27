@@ -25,7 +25,12 @@ module.exports = function(grunt) {
                 'test/**/*.js'
             ]
         },
-        release: {}
+        release: {
+            github: {
+                repo: 'dylang/node-rss',
+                accessTokenVar: 'GITHUB_ACCESS_TOKEN'
+            }
+        }
     });
 
     require('load-grunt-tasks')(grunt);
