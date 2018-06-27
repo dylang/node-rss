@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[title]]></title>
+        <description><![CDATA[description]]></description>
+        <link>http://example.com</link>
+        <image>
+            <url>http://example.com/icon.png</url>
+            <title>title</title>
+            <link>http://example.com</link>
+        </image>
+        <generator>Example Generator</generator>
+        <lastBuildDate>Wed, 10 Dec 2014 19:04:57 GMT</lastBuildDate>
+        <atom:link href="http://example.com/rss.xml" rel="self" type="application/rss+xml"/>
+        <author><![CDATA[Dylan Greene]]></author>
+        <pubDate>Sun, 20 May 2012 04:00:00 GMT</pubDate>
+        <copyright><![CDATA[2013 Dylan Green]]></copyright>
+        <language><![CDATA[en]]></language>
+        <managingEditor><![CDATA[Dylan Green]]></managingEditor>
+        <webMaster><![CDATA[Dylan Green]]></webMaster>
+        <docs>http://example.com/rss/docs.html</docs>
+        <ttl>60</ttl>
+        <category><![CDATA[Category 1]]></category>
+        <category><![CDATA[Category 2]]></category>
+        <category><![CDATA[Category 3]]></category>
+        <item>
+            <title><![CDATA[item 1]]></title>
+            <description><![CDATA[description 1]]></description>
+            <link>http://example.com/article1</link>
+            <guid isPermaLink="true">http://example.com/article1</guid>
+            <dc:creator><![CDATA[Dylan Greene]]></dc:creator>
+            <pubDate>Thu, 24 May 2012 04:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[item 2]]></title>
+            <description><![CDATA[description 2]]></description>
+            <link>http://example.com/article2</link>
+            <guid isPermaLink="true">http://example.com/article2</guid>
+            <dc:creator><![CDATA[Dylan Greene]]></dc:creator>
+            <pubDate>Fri, 25 May 2012 04:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[item 3]]></title>
+            <description><![CDATA[description 3]]></description>
+            <link>http://example.com/article3</link>
+            <guid isPermaLink="false">item3</guid>
+            <dc:creator><![CDATA[Dylan Greene]]></dc:creator>
+            <pubDate>Sat, 26 May 2012 04:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[item 4 & html test with <strong>]]></title>
+            <description><![CDATA[description 4 uses some <strong>html</strong>]]></description>
+            <link>http://example.com/article4?this&amp;that</link>
+            <guid isPermaLink="true">http://example.com/article4?this&amp;that</guid>
+            <dc:creator><![CDATA[Guest Author]]></dc:creator>
+            <pubDate>Sun, 27 May 2012 04:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[item 5 & test for categories]]></title>
+            <description><![CDATA[description 5]]></description>
+            <link>http://example.com/article5</link>
+            <guid isPermaLink="true">http://example.com/article5</guid>
+            <category><![CDATA[Category 1]]></category>
+            <category><![CDATA[Category 2]]></category>
+            <category><![CDATA[Category 3]]></category>
+            <category><![CDATA[Category 4]]></category>
+            <dc:creator><![CDATA[Guest Author]]></dc:creator>
+            <pubDate>Mon, 28 May 2012 04:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
