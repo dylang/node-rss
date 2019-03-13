@@ -1,6 +1,6 @@
 {
   "name": "rss-generator",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "RSS feed generator. Add RSS feeds to any project. Supports enclosures and GeoRSS.",
   "keywords": [
     "rss",
