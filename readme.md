@@ -38,6 +38,7 @@ var feed = new RSS(feedOptions);
  * `hub` _optional_ **PubSubHubbub hub url** Where is the PubSubHub hub located.
  * `custom_namespaces` _optional_ **object** Put additional namespaces in <rss> element (without 'xmlns:' prefix)
  * `custom_elements` _optional_ **array** Put additional elements in the feed (node-xml syntax)
+ * `dateFormatter` _optional_ **function** A function that receives the feed `pubDate` field and each item's `date` field. Allows for using a custom date format. Defaults to `new Date(date).toUTCString()`.
 
 #### Add items to a feed
 
