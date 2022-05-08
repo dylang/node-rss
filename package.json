@@ -16,7 +16,7 @@
   "scripts": {
     "test": "tape test --tap | tap-difflet",
     "lint": "grunt lint",
-    "test:browser": "prova -b"
+    "test:browser": "testling -u"
   },
   "homepage": "http://github.com/dylang/node-rss",
   "author": {
@@ -69,10 +69,10 @@
     "include-folder": "^1.0.0",
     "load-grunt-tasks": "^3.3.0",
     "mockdate": "^1.0.3",
-    "prova": "^2.1.2",
     "q": "^1.4.1",
     "tap-difflet": "^0.4.0",
     "tape": "^4.2.1",
+    "testling": "^1.7.3",
     "time-grunt": "^1.2.1",
     "xml2js": "^0.4.12"
   },
