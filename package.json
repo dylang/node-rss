@@ -60,21 +60,21 @@
     "xml": "1.0.1"
   },
   "devDependencies": {
-    "folderify": "^1.1.0",
-    "grunt": "^0.4.5",
-    "grunt-cli": "^0.1.13",
-    "grunt-contrib-jshint": "^0.11.3",
-    "grunt-release": "^0.13.0",
-    "grunt-templates-dylang": "^1.0.10",
-    "include-folder": "^1.0.0",
-    "load-grunt-tasks": "^3.3.0",
-    "mockdate": "^1.0.3",
-    "q": "^1.4.1",
-    "tap-difflet": "^0.4.0",
-    "tape": "^4.2.1",
-    "testling": "^1.7.3",
-    "time-grunt": "^1.2.1",
-    "xml2js": "^0.4.12"
+    "folderify": "1.2.1",
+    "grunt": "0.4.5",
+    "grunt-cli": "0.1.13",
+    "grunt-contrib-jshint": "0.11.3",
+    "grunt-release": "0.13.1",
+    "grunt-templates-dylang": "1.0.12",
+    "include-folder": "1.0.0",
+    "load-grunt-tasks": "3.5.2",
+    "mockdate": "1.0.4",
+    "q": "1.5.1",
+    "tap-difflet": "0.4.0",
+    "tape": "4.15.1",
+    "testling": "1.7.3",
+    "time-grunt": "1.4.0",
+    "xml2js": "0.4.23"
   },
   "browserify": {
     "transform": [
