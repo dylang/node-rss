@@ -70,7 +70,7 @@
     "load-grunt-tasks": "3.5.2",
     "mockdate": "1.0.4",
     "q": "1.5.1",
-    "tap-difflet": "0.4.0",
+    "tap-difflet": "0.7.2",
     "tape": "4.15.1",
     "testling": "1.7.3",
     "time-grunt": "1.4.0",
