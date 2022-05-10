@@ -62,7 +62,7 @@
   "devDependencies": {
     "folderify": "1.2.1",
     "grunt": "1.5.2",
-    "grunt-cli": "0.1.13",
+    "grunt-cli": "1.4.3",
     "grunt-contrib-jshint": "0.12.0",
     "grunt-release": "0.14.0",
     "grunt-templates-dylang": "1.0.12",
