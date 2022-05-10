@@ -68,7 +68,7 @@
     "grunt-templates-dylang": "1.0.12",
     "include-folder": "1.0.0",
     "load-grunt-tasks": "5.1.0",
-    "mockdate": "1.0.4",
+    "mockdate": "3.0.5",
     "q": "1.5.1",
     "tap-difflet": "0.7.2",
     "tape": "4.15.1",
