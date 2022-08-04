@@ -3,6 +3,7 @@
   "version": "1.2.2",
   "description": "RSS feed generator. Add RSS feeds to any project. Supports enclosures and GeoRSS.",
   "keywords": [
+    "RH-Custom"
     "rss",
     "xml",
     "atom",
@@ -24,6 +25,7 @@
     "email": "dylang@gmail.com"
   },
   "contributors": [
+    "Ricky",
     "Dylan Greene <dylang@gmail.com>",
     "Xavier Damman <xdamman@gmail.com>",
     "Michael R. Lange",
