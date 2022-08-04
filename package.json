@@ -3,7 +3,7 @@
   "version": "1.2.2",
   "description": "RSS feed generator. Add RSS feeds to any project. Supports enclosures and GeoRSS.",
   "keywords": [
-    "RH-Custom"
+    "RH-Custom",
     "rss",
     "xml",
     "atom",
