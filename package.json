@@ -74,7 +74,7 @@
     "tape": "5.6.6",
     "testling": "1.7.4",
     "time-grunt": "1.4.0",
-    "xml2js": "0.6.1"
+    "xml2js": "0.6.2"
   },
   "browserify": {
     "transform": [
