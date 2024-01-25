@@ -71,7 +71,7 @@
     "mockdate": "3.0.5",
     "q": "1.5.1",
     "tap-difflet": "0.7.2",
-    "tape": "5.7.3",
+    "tape": "5.7.4",
     "testling": "1.7.4",
     "time-grunt": "1.4.0",
     "xml2js": "0.6.2"
