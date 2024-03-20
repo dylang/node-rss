@@ -73,7 +73,7 @@
     "tap-difflet": "0.7.2",
     "tape": "5.7.5",
     "testling": "1.7.5",
-    "time-grunt": "1.4.0",
+    "time-grunt": "2.0.0",
     "xml2js": "0.6.2"
   },
   "browserify": {
