@@ -38,6 +38,7 @@ var feed = new RSS(feedOptions);
  * `hub` _optional_ **PubSubHubbub hub url** Where is the PubSubHub hub located.
  * `custom_namespaces` _optional_ **object** Put additional namespaces in <rss> element (without 'xmlns:' prefix)
  * `custom_elements` _optional_ **array** Put additional elements in the feed (node-xml syntax)
+ * `no_cdata_fields` _optional_ **array** Field names that shouldn't be wrapped with CDATA tag. The data will be escaped for XML. Default is to wrap with CDATA. You should only use this to work around problematic XML clients.
 
 #### Add items to a feed
 
@@ -85,8 +86,20 @@ feed.item(itemOptions);
     }
 
     ```
-##### Feed XML
 
+###### Add single item
+```js
+feed.item(itemOptions);
+```
+###### Concatenate an array of items
+```js
+feed.addItems(arrayOfItemOptions);
+```
+###### Delete all items
+```js
+feed.removeAllItems();
+```
+##### Feed XML
 ```js
 var xml = feed.xml({indent: true});
 ```
@@ -100,7 +113,7 @@ For example you can use `'\t'` for tab character, or `'  '` for two-space tabs. 
 
 
 ### Example Usage
-
+(examples/simple.js)
 ```js
 var RSS = require('rss');
 
