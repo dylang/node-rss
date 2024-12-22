@@ -62,7 +62,7 @@
   "devDependencies": {
     "folderify": "1.2.1",
     "grunt": "1.6.1",
-    "grunt-cli": "1.4.3",
+    "grunt-cli": "1.5.0",
     "grunt-contrib-jshint": "3.2.0",
     "grunt-release": "0.14.0",
     "grunt-templates-dylang": "1.0.12",
@@ -71,10 +71,10 @@
     "mockdate": "3.0.5",
     "q": "1.5.1",
     "tap-difflet": "0.7.2",
-    "tape": "5.6.3",
-    "testling": "1.7.4",
-    "time-grunt": "1.4.0",
-    "xml2js": "0.6.0"
+    "tape": "5.9.0",
+    "testling": "1.7.7",
+    "time-grunt": "2.0.0",
+    "xml2js": "0.6.2"
   },
   "browserify": {
     "transform": [
