@@ -28,8 +28,8 @@ var feed = new RSS(feedOptions);
  * `site_url` **url string** Url to the site that the feed is for.
  * `image_url` _optional_  **url string** Small image for feed readers to use.
  * `docs` _optional_ **url string** Url to documentation on this feed.
- * `managingEditor` _optional_ **string** Who manages content in this feed.
- * `webMaster` _optional_ **string** Who manages feed availability and technical support.
+ * `managingEditor` _optional_ **string** Email address of the person who manages content in this feed.
+ * `webMaster` _optional_ **string** Email address of the person who manages feed availability and technical support.
  * `copyright` _optional_ **string** Copyright information for this feed.
  * `language` _optional_ **string**  The language of the content of this feed.
  * `categories` _optional_ **array of strings**  One or more categories this feed belongs to.
@@ -57,7 +57,7 @@ feed.item(itemOptions);
  If you use a guid never change it.  If you don't provide a guid then your item urls must
  be unique.
  * `categories` _optional_ **array of strings** If provided, each array item will be added as a category element
- * `author` _optional_  **string**  If included it is the name of the item's creator.
+ * `author` _optional_  **string**  If included it is the email address of the item's creator.
  If not provided the item author will be the same as the feed author.  This is typical
  except on multi-author blogs.
  * `date` **Date object or date string** The date and time of when the item was created.  Feed
@@ -112,8 +112,8 @@ var feed = new RSS({
     site_url: 'http://example.com',
     image_url: 'http://example.com/icon.png',
     docs: 'http://example.com/rss/docs.html',
-    managingEditor: 'Dylan Greene',
-    webMaster: 'Dylan Greene',
+    managingEditor: 'user@domain.com (Dylan Greene)',
+    webMaster: 'user@domain.com (Dylan Greene)',
     copyright: '2013 Dylan Greene',
     language: 'en',
     categories: ['Category 1','Category 2','Category 3'],
@@ -124,7 +124,7 @@ var feed = new RSS({
     },
     custom_elements: [
       {'itunes:subtitle': 'A show about everything'},
-      {'itunes:author': 'John Doe'},
+      {'itunes:author': 'user@domain.com (John Doe)'},
       {'itunes:summary': 'All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our podcast in the Podcasts app or in the iTunes Store'},
       {'itunes:owner': [
         {'itunes:name': 'John Doe'},
@@ -155,7 +155,7 @@ feed.item({
     url: 'http://example.com/article4?this&that', // link to the item
     guid: '1123', // optional - defaults to url
     categories: ['Category 1','Category 2','Category 3','Category 4'], // optional - array of item categories
-    author: 'Guest Author', // optional - defaults to feed author property
+    author: 'user@domain.com (John Doe)', // optional - defaults to feed author property
     date: 'May 27, 2012', // any format that js Date can parse.
     lat: 33.417974, //optional latitude field for GeoRSS
     long: -111.933231, //optional longitude field for GeoRSS
