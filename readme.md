@@ -23,6 +23,7 @@ var feed = new RSS(feedOptions);
 
  * `title` **string** Title of your site or feed
  * `description` _optional_ **string** A short description of the feed.
+ * `disable_cdata` _optional_ **boolean** Disables CDATA for `title` and `description` if true.
  * `generator` _optional_  **string** Feed generator.
  * `feed_url` **url string** Url to the rss feed.
  * `site_url` **url string** Url to the site that the feed is for.
