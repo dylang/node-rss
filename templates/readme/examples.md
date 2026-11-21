@@ -1,5 +1,5 @@
 ## Example Usage
-
+(examples/simple.js)
 ```js
 var RSS = require('rss');
 
