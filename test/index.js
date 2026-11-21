@@ -336,3 +336,17 @@ test('custom namespaces', function(t) {
 
     t.equal(feed.xml({indent: true}), expectedOutput.customNamespaces);
 });
+
+test('omit build date', function(t) {
+    t.plan(1);
+
+    var feed = new RSS({
+        title: 'title',
+        description: 'description',
+        feed_url: 'http://example.com/rss.xml',
+        site_url: 'http://example.com',
+        omitBuildDate: true
+    });
+
+    t.equal(feed.xml({indent: true}), expectedOutput.omitBuildDate);
+});
